@@ -60,11 +60,14 @@
       transform: translateX(4%);
       transition: opacity 700ms ease, transform 700ms ease;
       color: #fefefe;
+      pointer-events: none;
     }
 
     .hero-slide.active {
       opacity: 1;
       transform: translateX(0);
+      pointer-events: auto;
+      z-index: 2;
     }
 
     .hero-details {
