@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ConnectAll · Apps · freedomappload</title>
+  <meta name="description" content="Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos." />
+  <link rel="canonical" href="https://freedomappload.es/apps/connectall/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+    .app-hero {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+    .app-hero img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .app-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,7,7,0.85) 0%, transparent 60%);
+    }
+    .app-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      display: grid;
+      gap: 40px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .app-meta small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .app-meta h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .app-meta p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 10px;
+      max-width: 640px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tags span {
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+    .feature-list li::before {
+      content: '▹';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    h2 { font-size: 1.4rem; font-weight: 700; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .detail-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .detail-card dt {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .detail-card dd { font-weight: 600; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
+      .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
+      .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .btn-primary { color: #052e1e; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-hero">
+    <img
+      src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=1400&q=80"
+      alt="Puzzle de colores — ConnectAll"
+      width="1400" height="420" />
+    <div class="app-hero__overlay"></div>
+  </div>
+
+  <main class="app-content">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <a href="/apps/">Apps</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">ConnectAll</span>
+    </nav>
+
+    <div class="app-meta">
+      <small>Juego · 2026 · Android</small>
+      <h1>ConnectAll</h1>
+      <p>Juego de puzzle para móvil en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos y publicidad no personalizada para menores.</p>
+      <div class="tags">
+        <span>Android</span><span>Kotlin</span><span>AdMob</span>
+      </div>
+      <div class="cta-group">
+        <a class="btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+           target="_blank" rel="noreferrer">
+          Descargar en Play Store ↗
+        </a>
+        <a class="btn-secondary" href="/privacy-policy-connectall.html">
+          Política de privacidad
+        </a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Características principales</h2>
+      <ul class="feature-list" style="margin-top:16px">
+        <li>Conecta todos los puntos del mismo color sin cruzar ningún trazo</li>
+        <li>Niveles progresivos de dificultad, desde principiante hasta experto</li>
+        <li>Tableros de distintos tamaños para aumentar el reto</li>
+        <li>Publicidad no personalizada apta para menores (COPPA / GDPR)</li>
+        <li>Sin compras necesarias para desbloquear niveles</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ficha técnica</h2>
+      <dl class="detail-grid" style="margin-top:16px">
+        <div class="detail-card"><dt>Plataforma</dt><dd>Android</dd></div>
+        <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2026</dd></div>
+        <div class="detail-card"><dt>Stack principal</dt><dd>Kotlin · AdMob</dd></div>
+        <div class="detail-card"><dt>Audiencia</dt><dd>Todas las edades</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+</html>

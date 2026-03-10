@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · freedomappload</title>
+  <meta name="description" content="Artículos sobre desarrollo móvil, web y producto por Antonio Palomo · freedomappload." />
+  <link rel="canonical" href="https://freedomappload.es/blog/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+    .page-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      flex: 1;
+      display: grid;
+      align-content: start;
+      gap: 40px;
+    }
+    .page-header small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    .page-header p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 1.05rem;
+    }
+    .empty-state {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 48px 32px;
+      text-align: center;
+      display: grid;
+      gap: 12px;
+    }
+    .empty-state p { color: var(--muted); }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
+      .empty-state { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-content">
+    <div class="page-header">
+      <small>Blog</small>
+      <h1>Artículos</h1>
+      <p>Notas técnicas y reflexiones sobre desarrollo móvil, web y producto.</p>
+    </div>
+    <div class="empty-state">
+      <p>Próximamente — los primeros artículos están en camino.</p>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+</html>
