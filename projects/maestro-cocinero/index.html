@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maestro Cocinero · Proyectos · freedomappload</title>
+  <meta name="description" content="Portal de recetas personalizadas con buscador por ingredientes. Desarrollado con Next.js y desplegado con Docker Compose sobre PostgreSQL." />
+  <link rel="canonical" href="https://freedomappload.es/projects/maestro-cocinero/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+    .project-hero {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+    .project-hero img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .project-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,7,7,0.85) 0%, transparent 60%);
+    }
+    .project-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      display: grid;
+      gap: 40px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .project-meta small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .project-meta h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .project-meta p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 10px;
+      max-width: 640px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .tags span {
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+    .feature-list li::before {
+      content: '▹';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    h2 { font-size: 1.4rem; font-weight: 700; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .detail-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .detail-card dt {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .detail-card dd { font-weight: 600; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
+      .project-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
+      .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .btn-primary { color: #052e1e; }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-hero">
+    <img
+      src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1400&q=80"
+      alt="Mesa con platos de comida — Maestro Cocinero"
+      width="1400" height="420" />
+    <div class="project-hero__overlay"></div>
+  </div>
+
+  <main class="project-content">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <a href="/projects/">Proyectos</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Maestro Cocinero</span>
+    </nav>
+
+    <div class="project-meta">
+      <small>Gastronomía · 2025 · Web</small>
+      <h1>Maestro Cocinero</h1>
+      <p>Portal de recetas personalizadas con buscador avanzado por ingredientes, desarrollado en Next.js y desplegado con Docker Compose sobre PostgreSQL.</p>
+      <div class="tags">
+        <span>Next.js</span><span>Docker</span><span>PostgreSQL</span><span>TypeScript</span>
+      </div>
+      <div class="cta-group">
+        <a class="btn-primary"
+           href="https://maestrococinero.es/"
+           target="_blank" rel="noreferrer">
+          Visitar sitio ↗
+        </a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Características del proyecto</h2>
+      <ul class="feature-list" style="margin-top:16px">
+        <li>Buscador de recetas filtrado por ingredientes disponibles en casa</li>
+        <li>Sistema de personalización: preferencias dietéticas y alergias</li>
+        <li>Generación dinámica de recetas con Next.js App Router y SSR</li>
+        <li>Base de datos relacional PostgreSQL desplegada con Docker Compose</li>
+        <li>Diseño responsive con enfoque mobile-first</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ficha técnica</h2>
+      <dl class="detail-grid" style="margin-top:16px">
+        <div class="detail-card"><dt>Tipo</dt><dd>Aplicación web</dd></div>
+        <div class="detail-card"><dt>Año</dt><dd>2025</dd></div>
+        <div class="detail-card"><dt>Frontend</dt><dd>Next.js · TypeScript</dd></div>
+        <div class="detail-card"><dt>Infraestructura</dt><dd>Docker · PostgreSQL</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+</html>

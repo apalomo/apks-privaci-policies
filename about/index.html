@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre mí · freedomappload</title>
+  <meta name="description" content="Antonio Palomo — desarrollador móvil y web. Stack, proceso de trabajo y contacto." />
+  <link rel="canonical" href="https://freedomappload.es/about/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: radial-gradient(circle at top, rgba(110,243,165,0.15), transparent 50%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      display: grid;
+      gap: 56px;
+    }
+    .about-header small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .about-header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    .about-header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-top: 14px;
+      max-width: 600px;
+    }
+    .about-header .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .stack-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 20px 22px;
+    }
+    .stack-card h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .stack-card ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+    .stack-card li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .stack-card li::before {
+      content: '·';
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    .process-list {
+      list-style: none;
+      display: grid;
+      gap: 20px;
+      counter-reset: steps;
+    }
+    .process-list li {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 16px;
+      align-items: start;
+      counter-increment: steps;
+    }
+    .process-list li::before {
+      content: counter(steps);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(110,243,165,0.12);
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .process-list strong { display: block; margin-bottom: 4px; }
+    .process-list p { color: var(--muted); font-size: 0.95rem; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
+      body { background: radial-gradient(circle at 20% 20%, rgba(22,195,123,0.15), transparent 50%), var(--bg); }
+      .stack-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .btn-primary { color: #052e1e; }
+      .process-list li::before { background: rgba(22,195,123,0.12); }
+    }
+  </style>
+</head>
+<body>
+  <main class="about-content">
+    <div class="about-header">
+      <small>Desarrollador móvil &amp; web</small>
+      <h1>Antonio Palomo</h1>
+      <p>Desarrollo apps y sitios que generan tracción real. Trabajo en sprints cortos, con entregables visibles cada semana y métricas claras desde el día uno.</p>
+      <div class="cta">
+        <a class="btn-primary"
+           href="https://www.linkedin.com/in/antonio-palomo-c%C3%A1rdenas-b8155a3b/"
+           target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="btn-secondary"
+           href="https://github.com/apalomo"
+           target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Stack tecnológico</h2>
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3>Mobile</h3>
+          <ul>
+            <li>Kotlin · Android</li>
+            <li>Jetpack Compose</li>
+            <li>Firebase</li>
+            <li>AdMob</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>Web</h3>
+          <ul>
+            <li>Next.js · React</li>
+            <li>TypeScript</li>
+            <li>PostgreSQL</li>
+            <li>Docker · Linux</li>
+          </ul>
+        </div>
+        <div class="stack-card">
+          <h3>Proceso</h3>
+          <ul>
+            <li>Discovery guiado</li>
+            <li>KPIs claros</li>
+            <li>Sprints semanales</li>
+            <li>Infra optimizada</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cómo trabajo</h2>
+      <ol class="process-list">
+        <li>
+          <div>
+            <strong>Discovery</strong>
+            <p>Sesión estratégica para entender el reto, definir KPIs y priorizar funcionalidades con impacto real.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Sprints semanales</strong>
+            <p>Entregables visibles cada semana. Tablero compartido con el equipo y retrospectiva ágil.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Lanzamiento y métricas</strong>
+            <p>Despliegue en producción con monitoreo activo. Iteraciones rápidas basadas en datos reales.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+</html>
