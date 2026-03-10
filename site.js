@@ -218,17 +218,23 @@
   const footer = document.createElement('footer');
   footer.className = 'site-footer';
 
+  const footerLinks = [
+    { label: 'Inicio', href: '/' },
+    ...navLinks,
+  ];
+
   const year = new Date().getFullYear();
   footer.innerHTML = `
     <div class="site-footer__inner">
       <nav class="site-footer__links" aria-label="Pie de página">
-        ${navLinks.map(({ label, href }) =>
+        ${footerLinks.map(({ label, href }) =>
           `<a href="${href}"${isCurrent(href) ? ' aria-current="page"' : ''}>${label}</a>`
         ).join('')}
       </nav>
       <div class="site-footer__social">
         <a href="https://www.linkedin.com/in/antonio-palomo-c%C3%A1rdenas-b8155a3b/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/apalomo" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="/about/">Contacto</a>
       </div>
       <p class="site-footer__copy">&copy; ${year} Antonio Palomo &middot; freedomappload</p>
       <p class="site-footer__tagline">Código limpio, productos memorables.</p>
