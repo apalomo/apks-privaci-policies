@@ -232,7 +232,7 @@
         ).join('')}
       </nav>
       <div class="site-footer__social">
-        <a href="https://www.linkedin.com/in/antonio-palomo-c%C3%A1rdenas-b8155a3b/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/antonio-palomo-cardenas-b8155a3b/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/apalomo" target="_blank" rel="noreferrer">GitHub</a>
         <a href="/about/">Contacto</a>
       </div>
