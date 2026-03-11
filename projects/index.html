@@ -139,9 +139,42 @@
       color: var(--accent);
       font-size: 0.9rem;
     }
+    .related-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 5vw, 80px) 72px;
+      width: 100%;
+    }
+    .related-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .project-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
     }
   </style>
 </head>
@@ -166,9 +199,18 @@
           <div class="project-card__tags">
             <span>Next.js</span><span>Docker</span><span>PostgreSQL</span>
           </div>
-          <span class="project-card__cta">Ver proyecto <span aria-hidden="true">→</span></span>
+          <span class="project-card__cta">Ver Maestro Cocinero <span aria-hidden="true">→</span></span>
         </div>
       </a>
+    </div>
+    <div class="related-section">
+      <h2>Más en freedomappload</h2>
+      <div class="related-links">
+        <a class="related-link" href="/">← Inicio</a>
+        <a class="related-link" href="/apps/">Ver apps Android →</a>
+        <a class="related-link" href="/blog/maestro-cocinero-web-recetas/">Artículo: cómo construí Maestro Cocinero →</a>
+        <a class="related-link" href="/blog/">Blog de desarrollo →</a>
+      </div>
     </div>
   </main>
   <footer></footer>
