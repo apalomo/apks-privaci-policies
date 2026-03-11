@@ -176,6 +176,19 @@
       margin-bottom: 6px;
     }
     .detail-card dd { font-weight: 600; }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .screenshots img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
@@ -230,6 +243,18 @@
         <li>Publicidad no personalizada apta para menores (COPPA / GDPR)</li>
         <li>Sin compras necesarias para desbloquear niveles</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Capturas de pantalla</h2>
+      <div class="screenshots">
+        <img src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="ConnectAll — pantalla de juego" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="ConnectAll — selección de nivel" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="ConnectAll — tablero resuelto" width="360" height="640" loading="lazy" />
+      </div>
     </section>
 
     <section>
