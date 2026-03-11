@@ -151,6 +151,96 @@
         .site-nav__links { background: rgba(251,251,251,0.99); }
       }
     }
+
+    /* ── Related blocks (reusable component) ────────────────────── */
+    .related-block {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .related-block__title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 20px;
+    }
+    .related-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 150ms ease, transform 150ms ease;
+    }
+    .related-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .related-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .related-card__body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .related-card__label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6ef3a5;
+    }
+    .related-card__title {
+      font-size: 0.975rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .related-card__desc {
+      font-size: 0.85rem;
+      color: #8f9ba8;
+      margin: 0;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .related-card__cta {
+      font-size: 0.82rem;
+      color: #6ef3a5;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    .related-block .related-links {
+      margin-top: 24px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .related-block { border-top-color: rgba(0,0,0,0.08); }
+      .related-card {
+        border-color: rgba(0,0,0,0.08);
+        box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+      }
+      .related-card:hover { border-color: #16c37b; }
+      .related-card__label { color: #16c37b; }
+      .related-card__desc { color: #556070; }
+      .related-card__cta { color: #16c37b; }
+    }
   `;
 
   const style = document.createElement('style');
