@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DGTest Autoescuela · Apps · freedomappload</title>
-  <meta name="description" content="Simulacros oficiales de examen de conducir con analítica de progreso y modo offline para estudiantes de autoescuela. Disponible en Google Play." />
+  <title>DGTest Autoescuela — App para el Examen de Conducir · freedomappload</title>
+  <meta name="description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <link rel="canonical" href="https://freedomappload.es/apps/dgtest/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="freedomappload" />
-  <meta property="og:title" content="DGTest Autoescuela · Apps · freedomappload" />
-  <meta property="og:description" content="Simulacros oficiales de examen de conducir con analítica de progreso y modo offline para estudiantes de autoescuela. Disponible en Google Play." />
+  <meta property="og:title" content="DGTest Autoescuela — App para el Examen de Conducir · freedomappload" />
+  <meta property="og:description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <meta property="og:url" content="https://freedomappload.es/apps/dgtest/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&h=630&q=80" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="DGTest Autoescuela · Apps · freedomappload" />
-  <meta name="twitter:description" content="Simulacros oficiales de examen de conducir con analítica de progreso y modo offline para estudiantes de autoescuela. Disponible en Google Play." />
+  <meta name="twitter:title" content="DGTest Autoescuela — App para el Examen de Conducir · freedomappload" />
+  <meta name="twitter:description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DGTest Autoescuela",
+    "description": "App Android con simulacros oficiales del examen de conducir de la DGT, analítica de progreso detallada y modo offline completo.",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "url": "https://freedomappload.es/apps/dgtest/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.freedomappload.dgtest",
+    "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -89,7 +103,7 @@
       font-weight: 700;
       margin-top: 10px;
     }
-    .app-meta p {
+    .app-meta .app-intro {
       color: var(--muted);
       font-size: 1.05rem;
       margin-top: 10px;
@@ -117,20 +131,21 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: var(--accent);
       color: #031b10;
       border-radius: 12px;
       font-weight: 700;
+      font-size: 1rem;
       text-decoration: none;
-      transition: transform 150ms ease;
+      transition: transform 150ms ease, box-shadow 150ms ease;
     }
-    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border: 1px solid rgba(255,255,255,0.25);
       color: var(--text);
       border-radius: 12px;
@@ -157,6 +172,14 @@
       margin-top: 2px;
     }
     h2 { font-size: 1.4rem; font-weight: 700; }
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+    .section-desc + .section-desc { margin-top: 12px; }
+    .inline-accent { color: var(--accent); }
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -191,11 +214,128 @@
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.07);
     }
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .solve-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 22px 20px;
+    }
+    .solve-card .solve-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .solve-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .solve-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .dev-block {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .dev-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+    .dev-block p + p { margin-top: 10px; }
+    .faq-list {
+      display: grid;
+      gap: 0;
+      margin-top: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { color: var(--accent); }
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 200ms ease;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(110,243,165,0.12) 0%, rgba(110,243,165,0.04) 100%);
+      border: 1px solid rgba(110,243,165,0.2);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .cta-banner h2 { margin-bottom: 8px; }
+    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
       .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .solve-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .dev-block { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .btn-primary { color: #052e1e; }
+      .breadcrumb span { color: rgba(15,23,42,0.25); }
+      .faq-list { border-color: rgba(15,23,42,0.1); }
+      .faq-item { border-color: rgba(15,23,42,0.1); }
     }
   </style>
 </head>
@@ -203,7 +343,7 @@
   <div class="app-hero">
     <img
       src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
-      alt="Coche en carretera — DGTest Autoescuela"
+      alt="Coche circulando por carretera — DGTest Autoescuela app examen de conducir"
       width="1400" height="420" />
     <div class="app-hero__overlay"></div>
   </div>
@@ -214,21 +354,25 @@
       <span aria-hidden="true">›</span>
       <a href="/apps/">Apps</a>
       <span aria-hidden="true">›</span>
-      <span aria-current="page">DGTest</span>
+      <span aria-current="page">DGTest Autoescuela</span>
     </nav>
 
+    <!-- Hero meta + CTA principal -->
     <div class="app-meta">
       <small>Educación vial · 2024 · Android</small>
-      <h1>DGTest Autoescuela</h1>
-      <p>Aplicación móvil con simulacros oficiales de examen de conducir, analítica de progreso detallada y modo offline completo para estudiantes de autoescuela.</p>
+      <h1>DGTest Autoescuela — App para el Examen de Conducir</h1>
+      <p class="app-intro">
+        Prepara el examen teórico de conducir con simulacros oficiales al 100 % del temario de la DGT,
+        analítica de progreso personalizada y modo offline completo. Disponible gratis en Google Play.
+      </p>
       <div class="tags">
         <span>Kotlin</span><span>Jetpack Compose</span><span>Firebase</span><span>Room</span>
       </div>
       <div class="cta-group">
         <a class="btn-primary"
            href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
-           target="_blank" rel="noreferrer">
-          Descargar en Play Store ↗
+           target="_blank" rel="noreferrer noopener">
+          ↓ Descargar gratis en Google Play
         </a>
         <a class="btn-secondary" href="/privacy-policy-dgtest.html">
           Política de privacidad
@@ -236,38 +380,240 @@
       </div>
     </div>
 
-    <section>
-      <h2>Características principales</h2>
-      <ul class="feature-list" style="margin-top:16px">
-        <li>Simulacros de examen con preguntas actualizadas al temario oficial de la DGT</li>
-        <li>Analítica de progreso: porcentaje de aciertos por categoría y evolución temporal</li>
-        <li>Modo offline: todos los tests disponibles sin conexión a internet</li>
-        <li>Fichas explicativas para cada pregunta fallada</li>
-        <li>Modo examen cronometrado con resultado instantáneo</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Capturas de pantalla</h2>
-      <div class="screenshots">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=360&h=640&q=75"
-             alt="DGTest — pantalla de simulacro" width="360" height="640" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=360&h=640&q=75"
-             alt="DGTest — analítica de progreso" width="360" height="640" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=360&h=640&q=75"
-             alt="DGTest — pregunta con explicación" width="360" height="640" loading="lazy" />
+    <!-- Qué resuelve -->
+    <section aria-labelledby="que-resuelve-title">
+      <h2 id="que-resuelve-title">¿Qué resuelve DGTest?</h2>
+      <p class="section-desc">
+        Prepararse para el examen de conducir es un proceso que suele generar ansiedad: el temario es extenso,
+        los recursos gratuitos están desactualizados y es difícil saber en qué áreas flaqueas realmente.
+        DGTest nació para resolver exactamente eso.
+      </p>
+      <div class="solve-grid">
+        <div class="solve-card">
+          <div class="solve-icon">📋</div>
+          <h3>Temario siempre actualizado</h3>
+          <p>Las preguntas siguen el banco oficial de la DGT. Ningún simulacro desfasado ni contenido inventado.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">📊</div>
+          <h3>Saber dónde fallas</h3>
+          <p>El panel de analítica muestra tu porcentaje de acierto por categoría, para que estudies lo que de verdad importa.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">📶</div>
+          <h3>Estudiar sin internet</h3>
+          <p>Toda la batería de tests funciona en modo offline. Estudia en el metro, en el autobús o en cualquier lugar sin cobertura.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">💡</div>
+          <h3>Entender los errores</h3>
+          <p>Cada pregunta fallada lleva una ficha explicativa para que no cometas el mismo error dos veces.</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Ficha técnica</h2>
+    <!-- Descripción larga SEO -->
+    <section aria-labelledby="descripcion-title">
+      <h2 id="descripcion-title">La app que te ayuda a aprobar a la primera</h2>
+      <p class="section-desc">
+        Obtener el carné de conducir es uno de los trámites más habituales en la vida de cualquier persona,
+        pero la tasa de suspenso en el examen teórico sigue siendo significativa año tras año.
+        La mayoría de los aspirantes estudia memorizando preguntas sin entender el razonamiento detrás,
+        y se presentan sin saber con certeza si están realmente preparados.
+      </p>
+      <p class="section-desc">
+        <strong>DGTest Autoescuela</strong> cambia ese enfoque. En lugar de simplemente darte un listado de preguntas,
+        la app analiza tu rendimiento en tiempo real: detecta qué categorías del temario dominas y cuáles
+        siguen siendo tu punto débil. Con esa información, puedes distribuir mejor tu tiempo de estudio
+        y llegar al examen sabiendo exactamente cuál es tu nivel real.
+      </p>
+      <p class="section-desc">
+        El <strong>modo examen cronometrado</strong> simula las condiciones reales de la prueba oficial:
+        30 preguntas, 30 minutos, máximo 3 fallos. Al terminar, ves al instante si habrías aprobado o
+        no, junto con la explicación detallada de cada respuesta incorrecta. Esta retroalimentación
+        inmediata es una de las claves para afianzar el aprendizaje.
+      </p>
+      <p class="section-desc">
+        Además, la app está diseñada para funcionar <strong>completamente sin conexión a internet</strong>.
+        Toda la base de preguntas, las fichas explicativas y el historial de resultados se almacenan
+        localmente en el dispositivo. Esto la convierte en una herramienta válida para estudiar en
+        cualquier contexto, sin depender de la cobertura del móvil.
+      </p>
+    </section>
+
+    <!-- Características principales -->
+    <section aria-labelledby="caracteristicas-title">
+      <h2 id="caracteristicas-title">Características principales</h2>
+      <ul class="feature-list" style="margin-top:16px">
+        <li>Simulacros de examen con preguntas actualizadas al temario oficial de la DGT</li>
+        <li>Panel de analítica: porcentaje de aciertos por categoría y evolución histórica</li>
+        <li>Modo offline completo: todos los tests disponibles sin conexión a internet</li>
+        <li>Fichas explicativas para cada pregunta fallada, con referencia normativa</li>
+        <li>Modo examen cronometrado (30 preguntas / 30 min) con resultado instantáneo</li>
+        <li>Historial de simulacros para seguir tu evolución semana a semana</li>
+        <li>Interfaz clara sin distracciones, optimizada para el estudio en móvil</li>
+      </ul>
+    </section>
+
+    <!-- Capturas de pantalla -->
+    <section aria-labelledby="capturas-title">
+      <h2 id="capturas-title">Capturas de pantalla</h2>
+      <div class="screenshots">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — pantalla de simulacro de examen" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — panel de analítica de progreso" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — ficha explicativa de pregunta" width="360" height="640" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Ficha técnica -->
+    <section aria-labelledby="ficha-title">
+      <h2 id="ficha-title">Ficha técnica</h2>
       <dl class="detail-grid" style="margin-top:16px">
         <div class="detail-card"><dt>Plataforma</dt><dd>Android</dd></div>
         <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2024</dd></div>
         <div class="detail-card"><dt>Stack principal</dt><dd>Kotlin · Firebase</dd></div>
-        <div class="detail-card"><dt>Almacenamiento</dt><dd>Room (SQLite)</dd></div>
+        <div class="detail-card"><dt>Almacenamiento local</dt><dd>Room (SQLite)</dd></div>
+        <div class="detail-card"><dt>Interfaz</dt><dd>Jetpack Compose</dd></div>
+        <div class="detail-card"><dt>Precio</dt><dd>Gratuita</dd></div>
       </dl>
     </section>
+
+    <!-- Cómo la he desarrollado -->
+    <section aria-labelledby="desarrollo-title">
+      <h2 id="desarrollo-title">Cómo la he desarrollado</h2>
+      <div class="dev-block">
+        <p>
+          DGTest fue mi primer proyecto Android serio. La idea surgió cuando un familiar estaba preparándose
+          para el carné y no encontraba una app que combinase simulacros actualizados con un seguimiento
+          real del aprendizaje. La mayoría de las opciones existentes o estaban desactualizadas o
+          mostraban el progreso de forma superficial.
+        </p>
+        <p>
+          Construí la app con <strong>Kotlin</strong> y <strong>Jetpack Compose</strong> para la interfaz,
+          optando por un diseño de pantalla única con navegación por bottom bar. La base de datos de preguntas
+          vive en <strong>Room (SQLite)</strong>, lo que permite el modo offline sin fricciones. El sistema
+          de analítica calcula el porcentaje de aciertos por categoría agrupando los resultados de los
+          últimos 30 días, dando así una visión real del estado de preparación.
+        </p>
+        <p>
+          Para el backend de autenticación y el almacenamiento de resultados opcionales en la nube
+          usé <strong>Firebase Authentication</strong> y <strong>Firestore</strong>. El mayor reto técnico
+          fue mantener la sincronización coherente entre el almacenamiento local y la nube cuando el
+          usuario estudia offline y luego recupera conexión.
+        </p>
+        <p>
+          El proceso completo —desde la primera línea de código hasta la publicación en Google Play— me
+          llevó aproximadamente tres meses, compaginándolo con otros proyectos. Fue el aprendizaje más
+          denso que he tenido en desarrollo móvil: ciclo de vida, arquitectura MVVM, manejo de estados
+          con StateFlow y el proceso de revisión de Google Play.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA central -->
+    <div class="cta-banner">
+      <h2>¿Listo para aprobar el examen de conducir?</h2>
+      <p>Descarga DGTest gratis en Google Play y empieza a practicar hoy mismo.</p>
+      <a class="btn-primary"
+         href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
+         target="_blank" rel="noreferrer noopener">
+        ↓ Descargar gratis en Google Play
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq-list" role="list">
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿La app es gratuita?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí, DGTest es completamente gratuita. No hay compras dentro de la app ni suscripciones.
+            Algunas pantallas pueden mostrar anuncios no intrusivos para cubrir los costes de mantenimiento.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Funciona sin conexión a internet?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. Toda la base de preguntas, los simulacros y el historial de resultados están almacenados
+            localmente en tu dispositivo. Puedes estudiar en el metro, en el autobús o en cualquier
+            lugar sin cobertura.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Las preguntas siguen el temario oficial de la DGT?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. El banco de preguntas está basado en el temario oficial publicado por la Dirección
+            General de Tráfico. Las actualizaciones se incorporan con las nuevas versiones de la app.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Qué diferencia hay entre el modo práctica y el modo examen?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            El <strong>modo práctica</strong> te permite repasar preguntas sin límite de tiempo y con
+            explicaciones inmediatas tras cada respuesta. El <strong>modo examen</strong> simula las
+            condiciones reales: 30 preguntas, 30 minutos y máximo 3 fallos. Al terminar ves si habrías
+            aprobado o no.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Para qué carné es válida la app?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            DGTest está orientada al examen del carné B (turismo). Es el permiso más demandado y el
+            que concentra el mayor volumen de aspirantes en España.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Qué datos recoge la app?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            La app puede recoger datos de uso anónimos para mejorar la experiencia (Firebase Analytics)
+            y puede mostrar publicidad a través de Google AdMob. Puedes consultar los detalles completos
+            en la <a href="/privacy-policy-dgtest.html" class="inline-accent">política de privacidad</a>.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Enlace a otras apps y blog -->
+    <section aria-labelledby="relacionados-title">
+      <h2 id="relacionados-title">Más recursos</h2>
+      <p class="section-desc">Explora más apps o vuelve al listado completo.</p>
+      <div class="related-links">
+        <a class="related-link" href="/apps/">← Ver todas las apps</a>
+        <a class="related-link" href="/apps/connectall/">ConnectAll — Juego de puzzle →</a>
+        <a class="related-link" href="/blog/">Blog de desarrollo →</a>
+        <a class="related-link" href="/about/">Sobre el desarrollador →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer></footer>
