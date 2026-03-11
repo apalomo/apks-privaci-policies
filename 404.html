@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página no encontrada · freedomappload</title>
+  <meta name="description" content="La página que buscas no existe. Vuelve al inicio o explora apps, proyectos y blog." />
+  <link rel="canonical" href="https://freedomappload.es/404.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --accent-fg: #031b10;
+      --card: #10121a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, rgba(110, 243, 165, 0.15), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    .error-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 72px clamp(24px, 6vw, 96px);
+      gap: 24px;
+    }
+
+    .error-code {
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .error-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    .error-desc {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 480px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+
+    .nav-links a.primary {
+      background: var(--accent);
+      color: var(--accent-fg);
+      box-shadow: 0 10px 30px rgba(110, 243, 165, 0.3);
+    }
+
+    .nav-links a.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(110, 243, 165, 0.4);
+    }
+
+    .nav-links a.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      background: var(--card);
+    }
+
+    .nav-links a.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fbfbfb;
+        --text: #0f172a;
+        --muted: #556070;
+        --accent: #16c37b;
+        --accent-fg: #ffffff;
+        --card: #ffffff;
+      }
+
+      body {
+        background: radial-gradient(circle at 20% 20%, rgba(22, 195, 123, 0.15), transparent 50%),
+          var(--bg);
+      }
+
+      .nav-links a.primary {
+        box-shadow: 0 10px 30px rgba(22, 195, 123, 0.25);
+        color: var(--accent-fg);
+      }
+
+      .nav-links a.secondary {
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="error-section">
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1 class="error-title">Página no encontrada</h1>
+    <p class="error-desc">Lo sentimos, la dirección que buscas no existe o ha cambiado. Estos enlaces te llevarán a buen puerto:</p>
+    <nav class="nav-links" aria-label="Recuperación de navegación">
+      <a class="primary" href="/">← Inicio</a>
+      <a class="secondary" href="/apps/">Apps</a>
+      <a class="secondary" href="/projects/">Proyectos</a>
+      <a class="secondary" href="/blog/">Blog</a>
+    </nav>
+  </main>
+  <script src="/site.js"></script>
+</body>
+
+</html>
