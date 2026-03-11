@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  PLANTILLA DE ARTÍCULO — freedomappload.es                      ║
+  ║                                                                  ║
+  ║  Cómo crear un nuevo post:                                       ║
+  ║  1. Copia este archivo a /blog/{slug-del-post}/index.html        ║
+  ║  2. Reemplaza todos los valores entre [CORCHETES]                ║
+  ║  3. Añade la tarjeta del post en /blog/index.html                ║
+  ║  4. Añade la URL en sitemap.xml                                  ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Formato: [Título corto] · Blog · freedomappload -->
+  <title>[TÍTULO DEL POST] · Blog · freedomappload</title>
+  <!-- 120-160 caracteres -->
+  <meta name="description" content="[DESCRIPCIÓN SEO: una frase que resume el contenido del artículo en 120-160 caracteres.]" />
+  <link rel="canonical" href="https://freedomappload.es/blog/[SLUG-DEL-POST]/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="freedomappload" />
+  <meta property="og:title" content="[TÍTULO DEL POST]" />
+  <meta property="og:description" content="[DESCRIPCIÓN SEO]" />
+  <meta property="og:url" content="https://freedomappload.es/blog/[SLUG-DEL-POST]/" />
+  <!-- Reemplaza por la URL de la imagen destacada (1200x630) -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-XXXXXXXXXX?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[TÍTULO DEL POST]" />
+  <meta name="twitter:description" content="[DESCRIPCIÓN SEO]" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-XXXXXXXXXX?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <!-- JSON-LD BlogPosting — actualiza headline, description, url, datePublished e image -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[TÍTULO DEL POST]",
+    "description": "[DESCRIPCIÓN SEO]",
+    "url": "https://freedomappload.es/blog/[SLUG-DEL-POST]/",
+    "datePublished": "[YYYY-MM-DD]",
+    "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" },
+    "image": "https://images.unsplash.com/photo-XXXXXXXXXX?auto=format&fit=crop&w=1200&h=630&q=80"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      display: grid;
+      gap: 32px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .post-header small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .post-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-top: 10px;
+      line-height: 1.2;
+    }
+    .post-header .post-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .post-header .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .post-header .tags span {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+    }
+    .post-hero {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .post-hero img {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      display: block;
+    }
+    .post-body {
+      display: grid;
+      gap: 24px;
+    }
+    .post-body h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .post-body p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .post-body strong { color: var(--text); }
+    .post-body a { color: var(--accent); text-decoration: none; }
+    .post-body a:hover { text-decoration: underline; }
+    .post-body ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      padding-left: 4px;
+    }
+    .post-body ul li {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .post-body ul li::before {
+      content: '▹';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .code-block {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      color: var(--muted);
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+    .code-block .kw { color: var(--accent); }
+    .callout {
+      background: rgba(110,243,165,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+    }
+    .callout p { color: var(--text); font-size: 0.95rem; }
+    .project-cta {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .project-cta h3 { font-size: 1.1rem; font-weight: 700; }
+    .project-cta p { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+      flex-shrink: 0;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
+      .code-block { box-shadow: 0 4px 16px rgba(15,23,42,0.06); }
+      .project-cta { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .breadcrumb span { color: rgba(15,23,42,0.25); }
+      .btn-primary { color: #052e1e; }
+    }
+  </style>
+</head>
+<body>
+  <main class="post-content">
+
+    <!-- BREADCRUMBS: Inicio › Blog › Título corto del post -->
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <a href="/blog/">Blog</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">[TÍTULO CORTO DEL POST]</span>
+    </nav>
+
+    <!-- CABECERA DEL POST -->
+    <header class="post-header">
+      <!-- Formato: Blog · [Categoría] · [Mes en español] [Año] -->
+      <small>Blog · [CATEGORÍA] · [MES AÑO]</small>
+      <h1>[TÍTULO COMPLETO DEL POST]</h1>
+      <div class="post-meta">
+        <span>Antonio Palomo</span>
+        <span>·</span>
+        <!-- datetime en formato ISO: YYYY-MM-DD -->
+        <time datetime="[YYYY-MM-DD]">[DD de MES de YYYY]</time>
+        <span>·</span>
+        <span>[X] min de lectura</span>
+      </div>
+      <!-- Etiquetas de tecnologías/temas del artículo -->
+      <div class="tags">
+        <span>[Tecnología 1]</span><span>[Tecnología 2]</span><span>[Tecnología 3]</span>
+      </div>
+    </header>
+
+    <!-- IMAGEN DESTACADA: ratio 16:7, mínimo 1400px de ancho -->
+    <div class="post-hero">
+      <img src="https://images.unsplash.com/photo-XXXXXXXXXX?auto=format&fit=crop&w=1400&q=80"
+           alt="[Descripción de la imagen para accesibilidad]"
+           width="1400" height="612" loading="eager" />
+    </div>
+
+    <!-- CUERPO DEL ARTÍCULO -->
+    <div class="post-body">
+
+      <!-- Párrafo introductorio: presenta el proyecto o tema -->
+      <p>
+        <strong>[Nombre del proyecto o tecnología]</strong> es... [descripción breve en 2-3 frases].
+      </p>
+
+      <p>
+        En este artículo explico... [lo que el lector va a aprender].
+      </p>
+
+      <!-- Sección de ejemplo -->
+      <h2>[Título de sección]</h2>
+
+      <p>
+        [Contenido de la sección...]
+      </p>
+
+      <!-- Lista de puntos -->
+      <ul>
+        <li>[Punto 1]</li>
+        <li>[Punto 2]</li>
+        <li>[Punto 3]</li>
+      </ul>
+
+      <!-- Bloque de código (opcional) -->
+      <div class="code-block"><span class="kw">// Código de ejemplo</span>
+fun ejemplo() {
+  println("Hola mundo")
+}</div>
+
+      <!-- Nota destacada (opcional) -->
+      <div class="callout">
+        <p>
+          <strong>Decisión de diseño:</strong> [Explica una decisión técnica importante o una lección
+          aprendida que vale la pena resaltar.]
+        </p>
+      </div>
+
+      <!-- Más secciones según sea necesario... -->
+
+    </div>
+
+    <!-- CTA AL PROYECTO RELACIONADO (opcional) -->
+    <div class="project-cta">
+      <div>
+        <h3>[Nombre del proyecto relacionado]</h3>
+        <p>[Descripción de una línea del proyecto.]</p>
+      </div>
+      <a class="btn-primary" href="/[apps|projects]/[slug-proyecto]/">Ver [nombre] →</a>
+    </div>
+
+    <!-- ENLACES RELACIONADOS -->
+    <section class="related-block" aria-labelledby="mas-contenido-title">
+      <h2 id="mas-contenido-title" class="related-block__title">Más proyectos</h2>
+      <div class="related-cards">
+        <!-- Copia y adapta tantas tarjetas como necesites -->
+        <a class="related-card" href="/[apps|projects]/[slug]/">
+          <img class="related-card__img"
+            src="https://images.unsplash.com/photo-XXXXXXXXXX?auto=format&fit=crop&w=600&h=338&q=75"
+            alt="[Descripción de la imagen]"
+            width="600" height="338" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__label">[App|Proyecto] · [Tecnología]</span>
+            <p class="related-card__title">[Nombre del proyecto]</p>
+            <p class="related-card__desc">[Descripción de una o dos frases.]</p>
+            <span class="related-card__cta">Ver [nombre] →</span>
+          </div>
+        </a>
+      </div>
+      <div class="related-links">
+        <a class="related-link" href="/blog/">← Todos los artículos</a>
+        <a class="related-link" href="/projects/">Ver todos los proyectos →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+</html>
