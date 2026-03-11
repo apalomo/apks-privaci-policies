@@ -69,6 +69,58 @@
       margin-top: 12px;
       font-size: 1.05rem;
     }
+    .post-list {
+      display: grid;
+      gap: 16px;
+    }
+    .post-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: grid;
+      gap: 10px;
+      transition: border-color 150ms ease, transform 150ms ease;
+    }
+    .post-card:hover {
+      border-color: rgba(110,243,165,0.3);
+      transform: translateY(-2px);
+    }
+    .post-card__meta {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .post-card__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .post-card__desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .post-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .post-card__tags span {
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+    }
+    .post-card__cta {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
     .empty-state {
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.07);
@@ -82,6 +134,7 @@
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .empty-state { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .post-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
     }
   </style>
 </head>
@@ -92,8 +145,16 @@
       <h1>Artículos</h1>
       <p>Notas técnicas y reflexiones sobre desarrollo móvil, web y producto.</p>
     </div>
-    <div class="empty-state">
-      <p>Próximamente — los primeros artículos están en camino.</p>
+    <div class="post-list">
+      <a class="post-card" href="/blog/maestro-cocinero-web-recetas/">
+        <span class="post-card__meta">Desarrollo web · Mayo 2025</span>
+        <h2 class="post-card__title">Cómo construí Maestro Cocinero: un portal de recetas con Next.js y PostgreSQL</h2>
+        <p class="post-card__desc">Decisiones de diseño y arquitectura detrás del proyecto: buscador por ingredientes con SQL ranking, SSR con App Router y despliegue con Docker Compose.</p>
+        <div class="post-card__tags">
+          <span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>TypeScript</span>
+        </div>
+        <span class="post-card__cta">Leer artículo →</span>
+      </a>
     </div>
   </main>
   <footer></footer>

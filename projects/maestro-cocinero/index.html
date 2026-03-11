@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maestro Cocinero · Proyectos · freedomappload</title>
-  <meta name="description" content="Portal de recetas personalizadas con buscador por ingredientes. Desarrollado con Next.js y desplegado con Docker Compose sobre PostgreSQL." />
+  <title>Maestro Cocinero — Portal de Recetas Personalizadas · Proyectos · freedomappload</title>
+  <meta name="description" content="Maestro Cocinero es un portal web que te ayuda a encontrar recetas con los ingredientes que tienes en casa. Desarrollado con Next.js, TypeScript y PostgreSQL." />
   <link rel="canonical" href="https://freedomappload.es/projects/maestro-cocinero/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="freedomappload" />
-  <meta property="og:title" content="Maestro Cocinero · Proyectos · freedomappload" />
-  <meta property="og:description" content="Portal de recetas personalizadas con buscador por ingredientes. Desarrollado con Next.js y desplegado con Docker Compose sobre PostgreSQL." />
+  <meta property="og:title" content="Maestro Cocinero — Portal de Recetas Personalizadas · freedomappload" />
+  <meta property="og:description" content="Maestro Cocinero es un portal web que te ayuda a encontrar recetas con los ingredientes que tienes en casa. Desarrollado con Next.js, TypeScript y PostgreSQL." />
   <meta property="og:url" content="https://freedomappload.es/projects/maestro-cocinero/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&h=630&q=80" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Maestro Cocinero · Proyectos · freedomappload" />
-  <meta name="twitter:description" content="Portal de recetas personalizadas con buscador por ingredientes. Desarrollado con Next.js y desplegado con Docker Compose sobre PostgreSQL." />
+  <meta name="twitter:title" content="Maestro Cocinero — Portal de Recetas Personalizadas · freedomappload" />
+  <meta name="twitter:description" content="Maestro Cocinero es un portal web que te ayuda a encontrar recetas con los ingredientes que tienes en casa. Desarrollado con Next.js, TypeScript y PostgreSQL." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Maestro Cocinero",
+    "description": "Portal web de recetas personalizadas con buscador por ingredientes, filtros dietéticos y diseño mobile-first.",
+    "url": "https://maestrococinero.es/",
+    "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -89,7 +99,7 @@
       font-weight: 700;
       margin-top: 10px;
     }
-    .project-meta p {
+    .project-meta .project-intro {
       color: var(--muted);
       font-size: 1.05rem;
       margin-top: 10px;
@@ -117,15 +127,65 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 14px 28px;
       background: var(--accent);
       color: #031b10;
       border-radius: 12px;
       font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 600;
       text-decoration: none;
       transition: transform 150ms ease;
     }
-    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary:hover { transform: translateY(-2px); }
+    h2 { font-size: 1.4rem; font-weight: 700; }
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+    .section-desc + .section-desc { margin-top: 12px; }
+    .inline-accent { color: var(--accent); }
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .solve-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 22px 20px;
+    }
+    .solve-card .solve-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .solve-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .solve-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
     .feature-list {
       list-style: none;
       display: grid;
@@ -143,7 +203,19 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
-    h2 { font-size: 1.4rem; font-weight: 700; }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .screenshots img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -163,11 +235,102 @@
       margin-bottom: 6px;
     }
     .detail-card dd { font-weight: 600; }
+    .dev-block {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .dev-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+    .dev-block p + p { margin-top: 10px; }
+    .faq-list {
+      display: grid;
+      gap: 0;
+      margin-top: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { color: var(--accent); }
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 200ms ease;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(110,243,165,0.12) 0%, rgba(110,243,165,0.04) 100%);
+      border: 1px solid rgba(110,243,165,0.2);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .cta-banner h2 { margin-bottom: 8px; }
+    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .project-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
       .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .solve-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .dev-block { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .btn-primary { color: #052e1e; }
+      .breadcrumb span { color: rgba(15,23,42,0.25); }
+      .faq-list { border-color: rgba(15,23,42,0.1); }
+      .faq-item { border-color: rgba(15,23,42,0.1); }
+      .screenshots img { border-color: rgba(15,23,42,0.1); }
     }
   </style>
 </head>
@@ -175,7 +338,7 @@
   <div class="project-hero">
     <img
       src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1400&q=80"
-      alt="Mesa con platos de comida — Maestro Cocinero"
+      alt="Mesa con platos de comida preparados — Maestro Cocinero portal de recetas"
       width="1400" height="420" />
     <div class="project-hero__overlay"></div>
   </div>
@@ -189,42 +352,232 @@
       <span aria-current="page">Maestro Cocinero</span>
     </nav>
 
+    <!-- Hero meta + CTA principal -->
     <div class="project-meta">
       <small>Gastronomía · 2025 · Web</small>
-      <h1>Maestro Cocinero</h1>
-      <p>Portal de recetas personalizadas con buscador avanzado por ingredientes, desarrollado en Next.js y desplegado con Docker Compose sobre PostgreSQL.</p>
+      <h1>Maestro Cocinero — Portal de Recetas Personalizadas</h1>
+      <p class="project-intro">
+        Encuentra qué cocinar con lo que tienes en la nevera. Un portal de recetas con buscador avanzado
+        por ingredientes, filtros dietéticos y diseño mobile-first, construido con Next.js y
+        desplegado con Docker Compose sobre PostgreSQL.
+      </p>
       <div class="tags">
-        <span>Next.js</span><span>Docker</span><span>PostgreSQL</span><span>TypeScript</span>
+        <span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span><span>Tailwind CSS</span>
       </div>
       <div class="cta-group">
         <a class="btn-primary"
            href="https://maestrococinero.es/"
-           target="_blank" rel="noreferrer">
-          Visitar sitio ↗
+           target="_blank" rel="noreferrer noopener">
+          Visitar Maestro Cocinero ↗
+        </a>
+        <a class="btn-secondary" href="/blog/maestro-cocinero-web-recetas/">
+          Cómo lo construí →
         </a>
       </div>
     </div>
 
-    <section>
-      <h2>Características del proyecto</h2>
+    <!-- Qué resuelve -->
+    <section aria-labelledby="que-resuelve-title">
+      <h2 id="que-resuelve-title">¿Qué resuelve Maestro Cocinero?</h2>
+      <p class="section-desc">
+        El eterno dilema de "¿qué cocino hoy?" se repite millones de veces al día. La mayoría de portales
+        de recetas te obligan a buscar por nombre del plato y después ir al supermercado. Maestro Cocinero
+        invierte el proceso: introduces los ingredientes que ya tienes y el portal te sugiere qué puedes
+        cocinar con ellos.
+      </p>
+      <div class="solve-grid">
+        <div class="solve-card">
+          <div class="solve-icon">🥕</div>
+          <h3>Buscar por ingredientes</h3>
+          <p>Selecciona lo que tienes en casa y obtén recetas que puedes preparar ahora mismo, sin compras extra.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">🥗</div>
+          <h3>Filtros dietéticos</h3>
+          <p>Vegetariano, vegano, sin gluten, sin lactosa — filtra según tus preferencias y las de toda la familia.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">⚡</div>
+          <h3>Recetas rápidas o elaboradas</h3>
+          <p>Desde platos de 15 minutos para días de semana hasta elaboraciones de fin de semana. Tú decides el nivel.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">📱</div>
+          <h3>Diseño mobile-first</h3>
+          <p>Pensado para usarlo desde el móvil mientras estás delante de la nevera o en el supermercado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descripción larga SEO -->
+    <section aria-labelledby="descripcion-title">
+      <h2 id="descripcion-title">El portal que convierte tu nevera en un recetario</h2>
+      <p class="section-desc">
+        Maestro Cocinero nació de una observación sencilla: la mayoría de aplicaciones y webs de recetas
+        están diseñadas para inspirarte a cocinar algo nuevo, no para ayudarte a aprovechar lo que ya tienes.
+        El resultado es que los usuarios acaban usando siempre las mismas cuatro recetas o, peor, tirando
+        ingredientes que no han sabido combinar.
+      </p>
+      <p class="section-desc">
+        El buscador inverso por ingredientes es el núcleo del proyecto. El usuario no necesita saber el nombre
+        del plato que quiere preparar: simplemente marca los ingredientes disponibles en casa y el motor de
+        búsqueda, construido sobre <strong>PostgreSQL con full-text search</strong>, devuelve las recetas
+        ordenadas por porcentaje de coincidencia con los ingredientes introducidos.
+      </p>
+      <p class="section-desc">
+        La capa frontend está construida con <strong>Next.js 14 App Router</strong> y <strong>TypeScript</strong>,
+        aprovechando el Server-Side Rendering para que cada página de receta sea indexable por los buscadores
+        desde el primer momento. El diseño, responsivo y de carga rápida, sigue un enfoque mobile-first
+        con <strong>Tailwind CSS</strong>.
+      </p>
+      <p class="section-desc">
+        Toda la infraestructura —base de datos, reverse proxy y aplicación Next.js— se gestiona con un único
+        fichero <strong>Docker Compose</strong> en un VPS, lo que permite despliegues reproducibles y rollbacks
+        sencillos sin depender de plataformas de terceros.
+      </p>
+    </section>
+
+    <!-- Beneficios para el usuario -->
+    <section aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title">Beneficios para el usuario</h2>
       <ul class="feature-list" style="margin-top:16px">
-        <li>Buscador de recetas filtrado por ingredientes disponibles en casa</li>
-        <li>Sistema de personalización: preferencias dietéticas y alergias</li>
-        <li>Generación dinámica de recetas con Next.js App Router y SSR</li>
-        <li>Base de datos relacional PostgreSQL desplegada con Docker Compose</li>
-        <li>Diseño responsive con enfoque mobile-first</li>
+        <li>Ahorra tiempo al decidir qué cocinar: de minutos de duda a segundos de búsqueda</li>
+        <li>Reduce el desperdicio alimentario aprovechando los ingredientes antes de que caduquen</li>
+        <li>Descubre recetas nuevas adaptadas a tus preferencias dietéticas y alergias</li>
+        <li>Acceso rápido desde cualquier dispositivo sin instalación: web progresiva mobile-first</li>
+        <li>Recetas con tiempo estimado, dificultad y lista de ingredientes ordenada por cantidad</li>
+        <li>Búsqueda flexible: cuantos más ingredientes selecciones, más precisos los resultados</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Ficha técnica</h2>
+    <!-- Capturas de pantalla -->
+    <section aria-labelledby="capturas-title">
+      <h2 id="capturas-title">Capturas del proyecto</h2>
+      <div class="screenshots">
+        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=600&h=375&q=75"
+             alt="Maestro Cocinero — vista del buscador por ingredientes" width="600" height="375" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&h=375&q=75"
+             alt="Maestro Cocinero — listado de recetas sugeridas" width="600" height="375" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&h=375&q=75"
+             alt="Maestro Cocinero — detalle de receta con instrucciones" width="600" height="375" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Ficha técnica -->
+    <section aria-labelledby="ficha-title">
+      <h2 id="ficha-title">Ficha técnica</h2>
       <dl class="detail-grid" style="margin-top:16px">
         <div class="detail-card"><dt>Tipo</dt><dd>Aplicación web</dd></div>
-        <div class="detail-card"><dt>Año</dt><dd>2025</dd></div>
-        <div class="detail-card"><dt>Frontend</dt><dd>Next.js · TypeScript</dd></div>
-        <div class="detail-card"><dt>Infraestructura</dt><dd>Docker · PostgreSQL</dd></div>
+        <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2025</dd></div>
+        <div class="detail-card"><dt>Frontend</dt><dd>Next.js 14 · TypeScript · Tailwind CSS</dd></div>
+        <div class="detail-card"><dt>Backend</dt><dd>Next.js API Routes · Server Actions</dd></div>
+        <div class="detail-card"><dt>Base de datos</dt><dd>PostgreSQL · Prisma ORM</dd></div>
+        <div class="detail-card"><dt>Infraestructura</dt><dd>Docker Compose · Nginx · VPS</dd></div>
       </dl>
     </section>
+
+    <!-- Cómo lo he construido -->
+    <section aria-labelledby="desarrollo-title">
+      <h2 id="desarrollo-title">Cómo lo he construido</h2>
+      <div class="dev-block">
+        <p>
+          El proyecto arrancó como una solución a un problema doméstico real: tener ingredientes en la nevera
+          y no saber combinarlos. La primera versión era un script de consola; en pocas semanas se convirtió
+          en una aplicación web completa porque el potencial de la idea era mayor de lo esperado.
+        </p>
+        <p>
+          Elegí <strong>Next.js 14</strong> con el App Router para aprovechar el SSR sin sacrificar la
+          interactividad en cliente. La decisión de usar <strong>PostgreSQL</strong> frente a una base de datos
+          documental fue deliberada: la búsqueda por ingredientes requiere queries relacionales complejas con
+          rankings de coincidencia que SQL gestiona de forma natural y eficiente.
+        </p>
+        <p>
+          El despliegue con <strong>Docker Compose</strong> fue una decisión de arquitectura desde el día uno.
+          Mantener la app, la base de datos y el proxy inverso como servicios declarativos en un solo fichero
+          elimina la deuda operacional y permite reproducir el entorno de producción localmente en segundos.
+          El mayor reto fue la gestión de migraciones de base de datos sin downtime, resuelto con
+          <strong>Prisma Migrate</strong> en un paso previo al arranque del contenedor de la aplicación.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA central -->
+    <div class="cta-banner">
+      <h2>¿Quieres ver Maestro Cocinero en acción?</h2>
+      <p>Entra al portal, introduce los ingredientes que tienes en casa y descubre qué puedes cocinar hoy.</p>
+      <a class="btn-primary"
+         href="https://maestrococinero.es/"
+         target="_blank" rel="noreferrer noopener">
+        Visitar Maestro Cocinero ↗
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq-list" role="list">
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Cómo funciona el buscador por ingredientes?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Seleccionas uno o varios ingredientes que tienes disponibles y el portal devuelve las recetas
+            ordenadas por porcentaje de coincidencia. Cuantos más ingredientes marques, más precisos son los
+            resultados. También puedes excluir ingredientes que no quieres usar.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Es gratuito?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí, Maestro Cocinero es completamente gratuito. No requiere registro para buscar recetas ni
+            consultar su contenido.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Funciona bien en móvil?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            El diseño es mobile-first: está pensado para usarlo desde el móvil delante de la nevera o
+            mientras haces la compra. La interfaz es responsive y se carga rápido en conexiones móviles.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Con qué tecnología está construido?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            El frontend usa <strong>Next.js 14</strong> con TypeScript y Tailwind CSS. La base de datos es
+            <strong>PostgreSQL</strong> con Prisma como ORM. Todo el stack corre en un VPS gestionado con
+            <strong>Docker Compose</strong>.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Más recursos -->
+    <section aria-labelledby="relacionados-title">
+      <h2 id="relacionados-title">Más recursos</h2>
+      <p class="section-desc">Explora más proyectos o lee el artículo sobre cómo se construyó.</p>
+      <div class="related-links">
+        <a class="related-link" href="/projects/">← Ver todos los proyectos</a>
+        <a class="related-link" href="/blog/maestro-cocinero-web-recetas/">Artículo: cómo lo construí →</a>
+        <a class="related-link" href="/apps/">Ver mis apps Android →</a>
+        <a class="related-link" href="/about/">Sobre el desarrollador →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer></footer>
