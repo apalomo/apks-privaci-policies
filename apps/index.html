@@ -163,6 +163,19 @@
     .app-card__cta--play:hover {
       color: var(--text);
     }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
     .related-section {
       max-width: 1100px;
       margin: 0 auto;
@@ -199,6 +212,7 @@
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
+      .btn-primary { color: #052e1e; }
     }
   </style>
 </head>
@@ -208,6 +222,13 @@
       <small>Aplicaciones móviles</small>
       <h1>Apps publicadas</h1>
       <p>Aplicaciones Android disponibles en Google Play, desarrolladas por Antonio Palomo.</p>
+      <div style="margin-top:20px;">
+        <a class="btn-primary"
+           href="https://play.google.com/store/apps/developer?id=freedomappload"
+           target="_blank" rel="noreferrer noopener">
+          Ver todas en Google Play ↗
+        </a>
+      </div>
     </div>
     <div class="apps-grid">
       <article class="app-card">
@@ -264,6 +285,17 @@
         <a class="related-link" href="/projects/">Proyectos web →</a>
         <a class="related-link" href="/blog/">Blog de desarrollo Android →</a>
         <a class="related-link" href="/about/">Sobre el desarrollador →</a>
+      </div>
+    </div>
+    <div style="padding:0 clamp(16px,5vw,80px) 72px;max-width:1100px;margin:0 auto;width:100%;">
+      <div class="cta-banner">
+        <h2>Descarga las apps en Google Play</h2>
+        <p>Todas las aplicaciones son gratuitas y están disponibles para Android ahora mismo.</p>
+        <a class="btn-primary"
+           href="https://play.google.com/store/apps/developer?id=freedomappload"
+           target="_blank" rel="noreferrer noopener">
+          Ver en Google Play ↗
+        </a>
       </div>
     </div>
   </main>

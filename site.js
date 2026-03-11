@@ -230,6 +230,23 @@
       margin-top: 24px;
     }
 
+    /* ── Shared CTA banner component ─────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(110,243,165,0.12) 0%, rgba(110,243,165,0.04) 100%);
+      border: 1px solid rgba(110,243,165,0.2);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .cta-banner h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .cta-banner p { color: var(--muted, #8f9ba8); font-size: 1rem; margin-bottom: 20px; }
+    .cta-banner__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
     @media (prefers-color-scheme: light) {
       .related-block { border-top-color: rgba(0,0,0,0.08); }
       .related-card {

@@ -139,6 +139,19 @@
       color: var(--accent);
       font-size: 0.9rem;
     }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
     .related-section {
       max-width: 1100px;
       margin: 0 auto;
@@ -175,6 +188,7 @@
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .project-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
+      .btn-primary { color: #052e1e; }
     }
   </style>
 </head>
@@ -184,6 +198,13 @@
       <small>freedomappload · productos digitales</small>
       <h1>Proyectos</h1>
       <p>De la idea al lanzamiento en semanas. Aquí reúno los proyectos web y productos digitales que construyo bajo la marca freedomappload: cada uno orientado a generar tracción real, con código limpio y métricas claras desde el primer día.</p>
+      <div style="margin-top:20px;">
+        <a class="btn-primary"
+           href="https://maestrococinero.es/"
+           target="_blank" rel="noreferrer noopener">
+          Visitar Maestro Cocinero ↗
+        </a>
+      </div>
     </div>
     <div class="projects-grid">
       <a class="project-card" href="/projects/maestro-cocinero/">
@@ -210,6 +231,17 @@
         <a class="related-link" href="/apps/">Ver apps Android →</a>
         <a class="related-link" href="/blog/maestro-cocinero-web-recetas/">Artículo: cómo construí Maestro Cocinero →</a>
         <a class="related-link" href="/blog/">Blog de desarrollo →</a>
+      </div>
+    </div>
+    <div style="padding:0 clamp(16px,5vw,80px) 72px;max-width:1100px;margin:0 auto;width:100%;">
+      <div class="cta-banner">
+        <h2>¿Tienes ingredientes pero no ideas?</h2>
+        <p>Prueba Maestro Cocinero: introduce lo que tienes en casa y descubre qué puedes cocinar hoy.</p>
+        <a class="btn-primary"
+           href="https://maestrococinero.es/"
+           target="_blank" rel="noreferrer noopener">
+          Visitar Maestro Cocinero ↗
+        </a>
       </div>
     </div>
   </main>
