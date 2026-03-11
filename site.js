@@ -1,7 +1,73 @@
 /**
- * site.js — Shared navigation & footer for freedomappload.es
- * Injects <header> nav and <footer> into every page.
+ * site.js — Shared navigation, footer and analytics for freedomappload.es
+ * Injects <header> nav and <footer> into every page, and loads GA4 analytics.
+ *
+ * Analytics – Google Analytics 4
+ * ─────────────────────────────────────────────────────────────────────────────
+ * GA4 Measurement ID is set in GA_MEASUREMENT_ID below.
+ * To use a different property, update that constant.
+ *
+ * Events tracked automatically by GA4:
+ *   • page_view    – fired on every page load (standard GA4 behaviour).
+ *
+ * Custom events tracked by this file:
+ *   • click_play_store        – user clicks a Google Play Store link.
+ *       Parameters: app_id (string), link_text (string), page_location (string)
+ *   • click_external_project  – user clicks a link to an external project site.
+ *       Parameters: project (string), destination (string), page_location (string)
+ *
+ * Dashboard:
+ *   Reports › Engagement › Events in the GA4 console shows all events above,
+ *   filtered per landing page via the "Page path" dimension.
+ * ─────────────────────────────────────────────────────────────────────────────
  */
+
+/* ── Google Analytics 4 ────────────────────────────────────────── */
+const GA_MEASUREMENT_ID = 'G-FL1V0XJYW8';
+const MAX_LINK_TEXT_LENGTH = 100;
+
+(function initGA(measurementId) {
+  if (!measurementId) return;
+
+  /* Load the gtag.js library */
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+  document.head.appendChild(gaScript);
+
+  /* Bootstrap dataLayer and the gtag helper (guard against duplicate initialisation) */
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+  }
+  window.gtag('config', measurementId);
+
+  /* Outbound-click tracking (capture phase so it fires before any preventDefault) */
+  document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a[href]');
+    if (!anchor) return;
+
+    let url;
+    try { url = new URL(anchor.href); } catch (_) { return; }
+
+    if (url.hostname === 'play.google.com') {
+      const appId = url.searchParams.get('id') || 'unknown';
+      window.gtag('event', 'click_play_store', {
+        app_id: appId,
+        link_text: anchor.textContent.trim().slice(0, MAX_LINK_TEXT_LENGTH),
+        page_location: window.location.href
+      });
+    } else if (url.hostname === 'maestrococinero.es' || url.hostname === 'www.maestrococinero.es') {
+      window.gtag('event', 'click_external_project', {
+        project: 'maestro-cocinero',
+        destination: anchor.href,
+        page_location: window.location.href
+      });
+    }
+  }, true);
+}(GA_MEASUREMENT_ID));
+
 (function () {
   /* ── Styles ─────────────────────────────────────────────────── */
   const css = `
