@@ -22,6 +22,7 @@
 ├── /projects/
 │   └── /projects/maestro-cocinero/
 ├── /blog/
+│   └── /blog/maestro-cocinero-web-recetas/
 └── /about/
 ```
 
@@ -87,6 +88,7 @@ Código limpio, productos memorables.
 | `/projects/` | `Proyectos · freedomappload` | Proyectos web y de producto desarrollados por Antonio Palomo. |
 | `/projects/maestro-cocinero/` | `Maestro Cocinero · Proyectos · freedomappload` | Portal de recetas personalizadas con buscador por ingredientes. |
 | `/blog/` | `Blog · freedomappload` | Artículos sobre desarrollo móvil, web y producto. |
+| `/blog/maestro-cocinero-web-recetas/` | `Cómo construí Maestro Cocinero · Blog · freedomappload` | Decisiones de diseño y arquitectura del portal de recetas. |
 | `/about/` | `Sobre mí · freedomappload` | Desarrollador móvil y web. Stack, proceso de trabajo y contacto. |
 
 ---
