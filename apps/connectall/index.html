@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ConnectAll · Apps · freedomappload</title>
-  <meta name="description" content="Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos." />
+  <title>ConnectAll — Juego de Puzzle para Android · freedomappload</title>
+  <meta name="description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
   <link rel="canonical" href="https://freedomappload.es/apps/connectall/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="freedomappload" />
-  <meta property="og:title" content="ConnectAll · Apps · freedomappload" />
-  <meta property="og:description" content="Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos." />
+  <meta property="og:title" content="ConnectAll — Juego de Puzzle para Android · freedomappload" />
+  <meta property="og:description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
   <meta property="og:url" content="https://freedomappload.es/apps/connectall/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=1200&h=630&q=80" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ConnectAll · Apps · freedomappload" />
-  <meta name="twitter:description" content="Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos." />
+  <meta name="twitter:title" content="ConnectAll — Juego de Puzzle para Android · freedomappload" />
+  <meta name="twitter:description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ConnectAll",
+    "description": "Juego de puzzle para Android en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Niveles progresivos, apto para todas las edades.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "url": "https://freedomappload.es/apps/connectall/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.freedomappload.connectall",
+    "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -189,11 +203,136 @@
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.07);
     }
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+    .section-desc + .section-desc { margin-top: 12px; }
+    .inline-accent { color: var(--accent); }
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .solve-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 22px 20px;
+    }
+    .solve-card .solve-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .solve-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .solve-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .dev-block {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .dev-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+    .dev-block p + p { margin-top: 10px; }
+    .faq-list {
+      display: grid;
+      gap: 0;
+      margin-top: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { color: var(--accent); }
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 200ms ease;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(110,243,165,0.12) 0%, rgba(110,243,165,0.04) 100%);
+      border: 1px solid rgba(110,243,165,0.2);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .cta-banner h2 { margin-bottom: 8px; }
+    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
       .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .solve-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .dev-block { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .btn-primary { color: #052e1e; }
+      .breadcrumb span { color: rgba(15,23,42,0.25); }
+      .faq-list { border-color: rgba(15,23,42,0.1); }
+      .faq-item { border-color: rgba(15,23,42,0.1); }
     }
   </style>
 </head>
@@ -217,16 +356,16 @@
 
     <div class="app-meta">
       <small>Juego · 2026 · Android</small>
-      <h1>ConnectAll</h1>
-      <p>Juego de puzzle para móvil en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos y publicidad no personalizada para menores.</p>
+      <h1>ConnectAll — Juego de Puzzle para Android</h1>
+      <p class="app-intro">Juego de puzzle para móvil en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos y publicidad no personalizada para menores.</p>
       <div class="tags">
         <span>Android</span><span>Kotlin</span><span>AdMob</span>
       </div>
       <div class="cta-group">
         <a class="btn-primary"
            href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
-           target="_blank" rel="noreferrer">
-          Descargar en Play Store ↗
+           target="_blank" rel="noreferrer noopener">
+          ↓ Descargar gratis en Google Play
         </a>
         <a class="btn-secondary" href="/privacy-policy-connectall.html">
           Política de privacidad
@@ -234,8 +373,65 @@
       </div>
     </div>
 
-    <section>
-      <h2>Características principales</h2>
+    <!-- Qué resuelve -->
+    <section aria-labelledby="que-resuelve-title">
+      <h2 id="que-resuelve-title">¿Qué hace especial a ConnectAll?</h2>
+      <p class="section-desc">
+        Los juegos de puzzle son uno de los géneros más populares en móvil, pero muchos pecan del mismo problema:
+        se vuelven repetitivos demasiado rápido o interrumpen la experiencia con publicidad agresiva.
+        ConnectAll nació para ser diferente.
+      </p>
+      <div class="solve-grid">
+        <div class="solve-card">
+          <div class="solve-icon">🎯</div>
+          <h3>Mecánica sencilla, profundidad real</h3>
+          <p>Una sola regla: conecta todos los puntos del mismo color sin cruzar trazos. Fácil de aprender, difícil de dominar.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">📈</div>
+          <h3>Dificultad progresiva</h3>
+          <p>Los tableros crecen en tamaño y complejidad a medida que avanzas, manteniendo el reto en todo momento.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">👨‍👩‍👧</div>
+          <h3>Apto para todas las edades</h3>
+          <p>Diseñado para ser jugado por toda la familia. La publicidad es no personalizada y cumple con COPPA y GDPR.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">🆓</div>
+          <h3>Completamente gratuito</h3>
+          <p>Sin compras dentro de la app para desbloquear niveles. Todo el contenido está disponible desde el primer día.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descripción larga SEO -->
+    <section aria-labelledby="descripcion-title">
+      <h2 id="descripcion-title">Un puzzle que entrena tu mente sin estresarte</h2>
+      <p class="section-desc">
+        El género de los juegos de conexión existe desde hace décadas, pero sigue fascinando porque activa
+        el pensamiento espacial de una manera accesible y satisfactoria. ConnectAll lleva esa esencia al
+        móvil Android con una interfaz limpia y sin ruido visual, para que puedas concentrarte únicamente
+        en resolver el tablero.
+      </p>
+      <p class="section-desc">
+        El objetivo es simple: cada tablero presenta varios pares de puntos de colores y tienes que trazar
+        un camino continuo que una cada par sin que ningún trazo se cruce con otro y llenando todas las
+        celdas del tablero. Suena sencillo con pocos colores, pero al aumentar el tamaño del tablero
+        y el número de pares la dificultad escala de forma natural, exigiendo planificación y visión global.
+      </p>
+      <p class="section-desc">
+        A diferencia de otros juegos del mismo género, <strong>ConnectAll</strong> no bloquea niveles
+        detrás de muros de pago ni te bombardea con interrupciones. La publicidad existe —es la forma de
+        sostener el desarrollo— pero está implementada con <strong>Google AdMob en modo no personalizado</strong>,
+        lo que garantiza el cumplimiento con la normativa de menores (COPPA y GDPR) y una experiencia
+        respetuosa para el jugador.
+      </p>
+    </section>
+
+    <!-- Características principales -->
+    <section aria-labelledby="caracteristicas-title">
+      <h2 id="caracteristicas-title">Características principales</h2>
       <ul class="feature-list" style="margin-top:16px">
         <li>Conecta todos los puntos del mismo color sin cruzar ningún trazo</li>
         <li>Niveles progresivos de dificultad, desde principiante hasta experto</li>
@@ -245,8 +441,9 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Capturas de pantalla</h2>
+    <!-- Capturas de pantalla -->
+    <section aria-labelledby="capturas-title">
+      <h2 id="capturas-title">Capturas de pantalla</h2>
       <div class="screenshots">
         <img src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=360&h=640&q=75"
              alt="ConnectAll — pantalla de juego" width="360" height="640" loading="lazy" />
@@ -257,15 +454,153 @@
       </div>
     </section>
 
-    <section>
-      <h2>Ficha técnica</h2>
+    <!-- Ficha técnica -->
+    <section aria-labelledby="ficha-title">
+      <h2 id="ficha-title">Ficha técnica</h2>
       <dl class="detail-grid" style="margin-top:16px">
         <div class="detail-card"><dt>Plataforma</dt><dd>Android</dd></div>
         <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2026</dd></div>
         <div class="detail-card"><dt>Stack principal</dt><dd>Kotlin · AdMob</dd></div>
         <div class="detail-card"><dt>Audiencia</dt><dd>Todas las edades</dd></div>
+        <div class="detail-card"><dt>Precio</dt><dd>Gratuito</dd></div>
+        <div class="detail-card"><dt>Publicidad</dt><dd>No personalizada</dd></div>
       </dl>
     </section>
+
+    <!-- Cómo lo he desarrollado -->
+    <section aria-labelledby="desarrollo-title">
+      <h2 id="desarrollo-title">Cómo lo he desarrollado</h2>
+      <div class="dev-block">
+        <p>
+          ConnectAll fue mi segunda app Android publicada. Después de la experiencia con DGTest —un proyecto
+          más complejo con backend en Firebase— quise construir algo más centrado en la lógica de juego pura:
+          sin servidor, sin base de datos remota, solo un motor de puzzle bien optimizado que funcionase
+          de manera fluida en cualquier dispositivo Android.
+        </p>
+        <p>
+          La mecánica central, el algoritmo que valida si todos los trazos son correctos sin cruzarse y
+          si el tablero queda completamente relleno, fue el reto técnico principal. Lo implementé en
+          <strong>Kotlin</strong> con una representación del tablero como matriz bidimensional, y el motor
+          de renderizado usa el <strong>Canvas API</strong> de Android para dibujar los trazos en tiempo real
+          a medida que el jugador arrastra el dedo.
+        </p>
+        <p>
+          Para la monetización elegí <strong>Google AdMob</strong> configurado en modo no personalizado
+          desde el primer día, garantizando así el cumplimiento con COPPA y GDPR sin necesidad de implementar
+          un flujo de consentimiento complejo. Esto simplificó el desarrollo y hizo que la app fuera
+          publicable para todas las edades sin restricciones.
+        </p>
+        <p>
+          El diseño de niveles fue otro desafío interesante: generarlos a mano permitió controlar la curva
+          de dificultad con precisión, asegurando que cada tablero tenga exactamente una solución óptima
+          y que la dificultad aumente de forma gradual y satisfactoria para el jugador.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA central -->
+    <div class="cta-banner">
+      <h2>¿Listo para poner a prueba tu mente?</h2>
+      <p>Descarga ConnectAll gratis en Google Play y empieza a resolver puzzles hoy mismo.</p>
+      <a class="btn-primary"
+         href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+         target="_blank" rel="noreferrer noopener">
+        ↓ Descargar gratis en Google Play
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq-list" role="list">
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿La app es gratuita?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí, ConnectAll es completamente gratuita. No hay compras dentro de la app ni suscripciones.
+            Algunos niveles pueden mostrar anuncios no intrusivos para cubrir los costes de mantenimiento.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Cuántos niveles tiene el juego?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            El juego incluye múltiples packs de niveles con tableros de distintos tamaños, desde cuadrículas
+            pequeñas para principiantes hasta tableros grandes diseñados para jugadores avanzados. Se irán
+            añadiendo nuevos niveles con las actualizaciones de la app.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Cómo se juega exactamente?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Cada tablero muestra pares de puntos de colores. Tu objetivo es trazar un camino continuo que
+            una cada par del mismo color, sin que ningún trazo se cruce con otro y rellenando
+            todas las celdas del tablero. El nivel se completa cuando todos los pares están conectados
+            y no queda ninguna celda vacía.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Es apta para niños?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. ConnectAll está diseñada para todas las edades. La publicidad está configurada en modo
+            no personalizado, cumpliendo con la normativa COPPA (para menores de 13 años) y GDPR.
+            No recoge datos personales de los jugadores.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Funciona sin conexión a internet?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. Todos los niveles están incluidos en la propia app y no requieren conexión para jugar.
+            Solo necesitarás internet para cargar los anuncios, pero el juego en sí funciona completamente
+            offline.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Qué datos recoge la app?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            La app puede mostrar publicidad a través de Google AdMob en modo no personalizado. No se
+            recogen ni almacenan datos personales identificables. Puedes consultar los detalles completos
+            en la <a href="/privacy-policy-connectall.html" class="inline-accent">política de privacidad</a>.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Enlace a otras apps y blog -->
+    <section aria-labelledby="relacionados-title">
+      <h2 id="relacionados-title">Más recursos</h2>
+      <p class="section-desc">Explora más apps o vuelve al listado completo.</p>
+      <div class="related-links">
+        <a class="related-link" href="/apps/">← Ver todas las apps</a>
+        <a class="related-link" href="/apps/dgtest/">DGTest Autoescuela — App de conducir →</a>
+        <a class="related-link" href="/blog/">Blog de desarrollo →</a>
+        <a class="related-link" href="/about/">Sobre el desarrollador →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer></footer>
