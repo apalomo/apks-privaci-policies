@@ -20,6 +20,16 @@
   <meta name="twitter:title" content="Blog · freedomappload" />
   <meta name="twitter:description" content="Artículos sobre desarrollo móvil, web y producto por Antonio Palomo · freedomappload." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://freedomappload.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://freedomappload.es/blog/" }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -121,6 +131,16 @@
       font-weight: 600;
       color: var(--accent);
     }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
     .related-section {
       display: grid;
       gap: 16px;
@@ -165,11 +185,17 @@
       .empty-state { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .post-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
+      .breadcrumb span { color: rgba(15,23,42,0.25); }
     }
   </style>
 </head>
 <body>
   <main class="page-content">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Blog</span>
+    </nav>
     <div class="page-header">
       <small>Blog</small>
       <h1>Artículos</h1>
@@ -184,6 +210,15 @@
           <span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>TypeScript</span>
         </div>
         <span class="post-card__cta">Leer artículo: Cómo construí Maestro Cocinero →</span>
+      </a>
+      <a class="post-card" href="/blog/lanzando-connectall-android/">
+        <span class="post-card__meta">Desarrollo móvil · Marzo 2025</span>
+        <h2 class="post-card__title">Cómo construí ConnectAll: un juego de puzzle para Android con Kotlin</h2>
+        <p class="post-card__desc">Del concepto al lanzamiento en Google Play: arquitectura del juego, monetización con AdMob y lecciones aprendidas publicando la primera app.</p>
+        <div class="post-card__tags">
+          <span>Kotlin</span><span>Android</span><span>Jetpack</span><span>AdMob</span>
+        </div>
+        <span class="post-card__cta">Leer artículo: Cómo construí ConnectAll →</span>
       </a>
     </div>
     <section class="related-section">
