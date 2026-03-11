@@ -4,8 +4,8 @@
  *
  * Analytics – Google Analytics 4
  * ─────────────────────────────────────────────────────────────────────────────
- * Replace GA_MEASUREMENT_ID with your real GA4 property ID (e.g. 'G-ABC123XYZ').
- * Until the placeholder is replaced the analytics script will NOT be loaded.
+ * GA4 Measurement ID is set in GA_MEASUREMENT_ID below.
+ * To use a different property, update that constant.
  *
  * Events tracked automatically by GA4:
  *   • page_view    – fired on every page load (standard GA4 behaviour).
@@ -23,11 +23,11 @@
  */
 
 /* ── Google Analytics 4 ────────────────────────────────────────── */
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: replace with your real GA4 Measurement ID
+const GA_MEASUREMENT_ID = 'G-FL1V0XJYW8';
 const MAX_LINK_TEXT_LENGTH = 100;
 
 (function initGA(measurementId) {
-  if (!measurementId || measurementId === 'G-XXXXXXXXXX') return;
+  if (!measurementId) return;
 
   /* Load the gtag.js library */
   const gaScript = document.createElement('script');
