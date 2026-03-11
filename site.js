@@ -247,6 +247,39 @@
   style.textContent = css;
   document.head.appendChild(style);
 
+  /* ── JSON-LD structured data ─────────────────────────────────── */
+  if (!document.querySelector('script[data-sitewide-jsonld]')) {
+    const jsonLd = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': 'https://freedomappload.es/#website',
+        name: 'freedomappload',
+        url: 'https://freedomappload.es/',
+        description: 'Desarrollador móvil y web. Apps y proyectos que generan tracción real.',
+        inLanguage: 'es',
+        author: { '@id': 'https://freedomappload.es/#person' },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': 'https://freedomappload.es/#person',
+        name: 'Antonio Palomo',
+        url: 'https://freedomappload.es/',
+        jobTitle: 'Desarrollador móvil y web',
+        sameAs: [
+          'https://www.linkedin.com/in/antonio-palomo-cardenas-b8155a3b/',
+          'https://github.com/apalomo',
+        ],
+      },
+    ];
+    const ldScript = document.createElement('script');
+    ldScript.type = 'application/ld+json';
+    ldScript.setAttribute('data-sitewide-jsonld', '');
+    ldScript.textContent = JSON.stringify(jsonLd);
+    document.head.appendChild(ldScript);
+  }
+
   /* ── Active link helper ─────────────────────────────────────── */
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   function isCurrent(href) {
