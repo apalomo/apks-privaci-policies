@@ -83,12 +83,14 @@
       display: flex;
       flex-direction: column;
       transition: transform 200ms ease, box-shadow 200ms ease;
-      text-decoration: none;
-      color: inherit;
     }
     .app-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .app-card__cover {
+      display: block;
+      line-height: 0;
     }
     .app-card__banner {
       width: 100%;
@@ -113,6 +115,13 @@
       font-size: 1.3rem;
       font-weight: 700;
     }
+    .app-card__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .app-card__title a:hover {
+      color: var(--accent);
+    }
     .app-card__desc {
       color: var(--muted);
       font-size: 0.92rem;
@@ -130,14 +139,29 @@
       border-radius: 999px;
       background: rgba(255,255,255,0.07);
     }
+    .app-card__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
     .app-card__cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 8px;
       font-weight: 600;
       color: var(--accent);
       font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .app-card__cta:hover {
+      text-decoration: underline;
+    }
+    .app-card__cta--play {
+      color: var(--muted);
+    }
+    .app-card__cta--play:hover {
+      color: var(--text);
     }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
@@ -153,38 +177,52 @@
       <p>Aplicaciones Android disponibles en Google Play, desarrolladas por Antonio Palomo.</p>
     </div>
     <div class="apps-grid">
-      <a class="app-card" href="/apps/dgtest/">
-        <img class="app-card__banner"
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=75"
-          alt="DGTest Autoescuela"
-          width="800" height="450"
-          loading="lazy" />
+      <article class="app-card">
+        <a class="app-card__cover" href="/apps/dgtest/">
+          <img class="app-card__banner"
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=75"
+            alt="DGTest Autoescuela"
+            width="800" height="450"
+            loading="lazy" />
+        </a>
         <div class="app-card__body">
           <span class="app-card__category">Educación vial · 2024</span>
-          <h2 class="app-card__title">DGTest Autoescuela</h2>
+          <h2 class="app-card__title"><a href="/apps/dgtest/">DGTest Autoescuela</a></h2>
           <p class="app-card__desc">Simulacros oficiales de examen de conducir con analítica de progreso y modo offline.</p>
           <div class="app-card__tags">
             <span>Kotlin</span><span>Jetpack</span><span>Firebase</span>
           </div>
-          <span class="app-card__cta">Ver app <span aria-hidden="true">→</span></span>
+          <div class="app-card__actions">
+            <a class="app-card__cta" href="/apps/dgtest/">Ver app <span aria-hidden="true">→</span></a>
+            <a class="app-card__cta app-card__cta--play"
+               href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
+               target="_blank" rel="noreferrer noopener">Play Store ↗</a>
+          </div>
         </div>
-      </a>
-      <a class="app-card" href="/apps/connectall/">
-        <img class="app-card__banner"
-          src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=800&q=75"
-          alt="ConnectAll"
-          width="800" height="450"
-          loading="lazy" />
+      </article>
+      <article class="app-card">
+        <a class="app-card__cover" href="/apps/connectall/">
+          <img class="app-card__banner"
+            src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?auto=format&fit=crop&w=800&q=75"
+            alt="ConnectAll"
+            width="800" height="450"
+            loading="lazy" />
+        </a>
         <div class="app-card__body">
           <span class="app-card__category">Juego · 2026</span>
-          <h2 class="app-card__title">ConnectAll</h2>
+          <h2 class="app-card__title"><a href="/apps/connectall/">ConnectAll</a></h2>
           <p class="app-card__desc">Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos.</p>
           <div class="app-card__tags">
             <span>Android</span><span>Kotlin</span><span>AdMob</span>
           </div>
-          <span class="app-card__cta">Ver app <span aria-hidden="true">→</span></span>
+          <div class="app-card__actions">
+            <a class="app-card__cta" href="/apps/connectall/">Ver app <span aria-hidden="true">→</span></a>
+            <a class="app-card__cta app-card__cta--play"
+               href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+               target="_blank" rel="noreferrer noopener">Play Store ↗</a>
+          </div>
         </div>
-      </a>
+      </article>
     </div>
   </main>
   <footer></footer>

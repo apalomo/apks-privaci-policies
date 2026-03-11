@@ -178,6 +178,19 @@
     .detail-card dd {
       font-weight: 600;
     }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .screenshots img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
@@ -232,6 +245,18 @@
         <li>Fichas explicativas para cada pregunta fallada</li>
         <li>Modo examen cronometrado con resultado instantáneo</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>Capturas de pantalla</h2>
+      <div class="screenshots">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — pantalla de simulacro" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — analítica de progreso" width="360" height="640" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=360&h=640&q=75"
+             alt="DGTest — pregunta con explicación" width="360" height="640" loading="lazy" />
+      </div>
     </section>
 
     <section>
