@@ -121,6 +121,35 @@
       font-weight: 600;
       color: var(--accent);
     }
+    .related-section {
+      display: grid;
+      gap: 16px;
+    }
+    .related-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
     .empty-state {
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.07);
@@ -135,6 +164,7 @@
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .empty-state { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .post-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
     }
   </style>
 </head>
@@ -153,9 +183,19 @@
         <div class="post-card__tags">
           <span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>TypeScript</span>
         </div>
-        <span class="post-card__cta">Leer artículo →</span>
+        <span class="post-card__cta">Leer artículo: Cómo construí Maestro Cocinero →</span>
       </a>
     </div>
+    <section class="related-section">
+      <h2>Fichas de apps y proyectos</h2>
+      <div class="related-links">
+        <a class="related-link" href="/projects/maestro-cocinero/">Maestro Cocinero — portal de recetas →</a>
+        <a class="related-link" href="/apps/dgtest/">DGTest Autoescuela — app de conducir →</a>
+        <a class="related-link" href="/apps/connectall/">ConnectAll — juego de puzzle →</a>
+        <a class="related-link" href="/projects/">Ver todos los proyectos →</a>
+        <a class="related-link" href="/apps/">Ver todas las apps →</a>
+      </div>
+    </section>
   </main>
   <footer></footer>
   <script src="/site.js"></script>
