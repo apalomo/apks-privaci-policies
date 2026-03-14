@@ -292,6 +292,26 @@ const MAX_LINK_TEXT_LENGTH = 100;
       margin-top: auto;
       padding-top: 8px;
     }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .related-link:hover { border-color: var(--accent); color: var(--accent); }
     .related-block .related-links {
       margin-top: 24px;
     }
@@ -323,6 +343,7 @@ const MAX_LINK_TEXT_LENGTH = 100;
       .related-card__label { color: #16c37b; }
       .related-card__desc { color: #556070; }
       .related-card__cta { color: #16c37b; }
+      .related-link { box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
     }
   `;
 
