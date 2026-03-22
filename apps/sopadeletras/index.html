@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ConnectAll — Juego de Puzzle para Android · freedomappload</title>
-  <meta name="description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
-  <link rel="canonical" href="https://freedomappload.es/apps/connectall/" />
+  <title>Sopa de Letras — Juego de Palabras para Android · freedomappload</title>
+  <meta name="description" content="Sopa de Letras es un juego de palabras para Android: encuentra todas las palabras ocultas en la cuadrícula. Gratis en Google Play, con niveles progresivos." />
+  <link rel="canonical" href="https://freedomappload.es/apps/sopadeletras/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="freedomappload" />
-  <meta property="og:title" content="ConnectAll — Juego de Puzzle para Android · freedomappload" />
-  <meta property="og:description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
-  <meta property="og:url" content="https://freedomappload.es/apps/connectall/" />
-  <meta property="og:image" content="https://freedomappload.es/apps/connectall/graficofunciones.png" />
+  <meta property="og:title" content="Sopa de Letras — Juego de Palabras para Android · freedomappload" />
+  <meta property="og:description" content="Sopa de Letras es un juego de palabras para Android: encuentra todas las palabras ocultas en la cuadrícula. Gratis en Google Play, con niveles progresivos." />
+  <meta property="og:url" content="https://freedomappload.es/apps/sopadeletras/" />
+  <meta property="og:image" content="https://freedomappload.es/apps/sopadeletras/graficofunciones.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ConnectAll — Juego de Puzzle para Android · freedomappload" />
-  <meta name="twitter:description" content="ConnectAll es un juego de puzzle para Android: conecta todos los puntos del tablero sin cruzar los trazos. Gratis en Google Play, apto para todas las edades." />
-  <meta name="twitter:image" content="https://freedomappload.es/apps/connectall/graficofunciones.png" />
+  <meta name="twitter:title" content="Sopa de Letras — Juego de Palabras para Android · freedomappload" />
+  <meta name="twitter:description" content="Sopa de Letras es un juego de palabras para Android: encuentra todas las palabras ocultas en la cuadrícula. Gratis en Google Play, con niveles progresivos." />
+  <meta name="twitter:image" content="https://freedomappload.es/apps/sopadeletras/graficofunciones.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ConnectAll",
-    "description": "Juego de puzzle para Android en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Niveles progresivos, apto para todas las edades.",
+    "name": "Sopa de Letras",
+    "description": "Juego de palabras para Android en el que el objetivo es encontrar todas las palabras ocultas en la cuadrícula de letras. Niveles progresivos con sistema de vidas.",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Android",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "url": "https://freedomappload.es/apps/connectall/",
-    "downloadUrl": "https://play.google.com/store/apps/details?id=com.freedomappload.connectall",
+    "url": "https://freedomappload.es/apps/sopadeletras/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.freedomappload.sopadeletras",
     "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" }
   }
   </script>
@@ -323,12 +323,67 @@
     }
     .cta-banner h2 { margin-bottom: 8px; }
     .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
+    .related-block__title { margin-bottom: 20px; }
+    .related-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    }
+    .related-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .related-card__body {
+      padding: 16px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .related-card__label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .related-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .related-card__desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .related-card__cta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
     @media (prefers-color-scheme: light) {
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
       .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .solve-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .dev-block { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .related-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
       .btn-primary { color: #052e1e; }
       .breadcrumb span { color: rgba(15,23,42,0.25); }
       .faq-list { border-color: rgba(15,23,42,0.1); }
@@ -339,8 +394,8 @@
 <body>
   <div class="app-hero">
     <img
-      src="/apps/connectall/graficofunciones.png"
-      alt="ConnectAll — gráfico de funciones de la aplicación"
+      src="/apps/sopadeletras/graficofunciones.png"
+      alt="Sopa de Letras — gráfico de funciones de la aplicación"
       width="1400" height="420" />
     <div class="app-hero__overlay"></div>
   </div>
@@ -351,23 +406,23 @@
       <span aria-hidden="true">›</span>
       <a href="/apps/">Apps</a>
       <span aria-hidden="true">›</span>
-      <span aria-current="page">ConnectAll</span>
+      <span aria-current="page">Sopa de Letras</span>
     </nav>
 
     <div class="app-meta">
       <small>Juego · 2026 · Android</small>
-      <h1>ConnectAll — Juego de Puzzle para Android</h1>
-      <p class="app-intro">Juego de puzzle para móvil en el que el objetivo es conectar todos los puntos del tablero sin cruzar los trazos. Apto para todas las edades, con niveles progresivos y publicidad no personalizada para menores.</p>
+      <h1>Sopa de Letras — Juego de Palabras para Android</h1>
+      <p class="app-intro">Juego clásico de sopa de letras para Android con niveles progresivos, sistema de vidas y temáticas variadas. Encuentra todas las palabras ocultas en la cuadrícula. Gratis en Google Play.</p>
       <div class="tags">
-        <span>Android</span><span>Kotlin</span><span>AdMob</span>
+        <span>Android</span><span>Kotlin</span><span>Jetpack Compose</span><span>AdMob</span>
       </div>
       <div class="cta-group">
         <a class="btn-primary"
-           href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+           href="https://play.google.com/store/apps/details?id=com.freedomappload.sopadeletras"
            target="_blank" rel="noreferrer noopener">
           ↓ Descargar gratis en Google Play
         </a>
-        <a class="btn-secondary" href="/privacy-policy-connectall.html">
+        <a class="btn-secondary" href="/privacy-policy-sopa-de-letras.html">
           Política de privacidad
         </a>
       </div>
@@ -375,57 +430,61 @@
 
     <!-- Qué resuelve -->
     <section aria-labelledby="que-resuelve-title">
-      <h2 id="que-resuelve-title">¿Qué hace especial a ConnectAll?</h2>
+      <h2 id="que-resuelve-title">¿Qué hace especial a Sopa de Letras?</h2>
       <p class="section-desc">
-        Los juegos de puzzle son uno de los géneros más populares en móvil, pero muchos pecan del mismo problema:
-        se vuelven repetitivos demasiado rápido o interrumpen la experiencia con publicidad agresiva.
-        ConnectAll nació para ser diferente.
+        Las sopas de letras son uno de los pasatiempos más queridos de siempre, pero pocas apps
+        hacen justicia a la experiencia clásica. Sopa de Letras nació para llevar el juego de toda
+        la vida al móvil con una experiencia limpia, progresiva y sin fricciones innecesarias.
       </p>
       <div class="solve-grid">
         <div class="solve-card">
-          <div class="solve-icon">🎯</div>
-          <h3>Mecánica sencilla, profundidad real</h3>
-          <p>Una sola regla: conecta todos los puntos del mismo color sin cruzar trazos. Fácil de aprender, difícil de dominar.</p>
+          <div class="solve-icon">🔤</div>
+          <h3>Mecánica clásica, experiencia moderna</h3>
+          <p>Encuentra las palabras ocultas deslizando el dedo por la cuadrícula. La mecánica de siempre con una interfaz fluida y accesible.</p>
         </div>
         <div class="solve-card">
           <div class="solve-icon">📈</div>
           <h3>Dificultad progresiva</h3>
-          <p>Los tableros crecen en tamaño y complejidad a medida que avanzas, manteniendo el reto en todo momento.</p>
+          <p>Las cuadrículas crecen en tamaño y las palabras se esconden en más direcciones a medida que avanzas de nivel.</p>
         </div>
         <div class="solve-card">
-          <div class="solve-icon">👨‍👩‍👧</div>
-          <h3>Apto para todas las edades</h3>
-          <p>Diseñado para ser jugado por toda la familia. La publicidad es no personalizada y cumple con COPPA y GDPR.</p>
+          <div class="solve-icon">❤️</div>
+          <h3>Sistema de vidas</h3>
+          <p>Cinco vidas que se recuperan automáticamente con el tiempo. El reto justo sin frustrar al jugador.</p>
         </div>
         <div class="solve-card">
           <div class="solve-icon">🆓</div>
           <h3>Completamente gratuito</h3>
-          <p>Sin compras dentro de la app para desbloquear niveles. Todo el contenido está disponible desde el primer día.</p>
+          <p>Sin compras necesarias para desbloquear niveles. Todo el contenido disponible desde el primer día.</p>
         </div>
       </div>
     </section>
 
     <!-- Descripción larga SEO -->
     <section aria-labelledby="descripcion-title">
-      <h2 id="descripcion-title">Un puzzle que entrena tu mente sin estresarte</h2>
+      <h2 id="descripcion-title">El clásico pasatiempo en tu bolsillo</h2>
       <p class="section-desc">
-        El género de los juegos de conexión existe desde hace décadas, pero sigue fascinando porque activa
-        el pensamiento espacial de una manera accesible y satisfactoria. ConnectAll lleva esa esencia al
-        móvil Android con una interfaz limpia y sin ruido visual, para que puedas concentrarte únicamente
-        en resolver el tablero.
+        Las sopas de letras llevan décadas entrenando la memoria, la concentración y el vocabulario de
+        millones de personas. Sopa de Letras lleva esa tradición al Android con una interfaz táctil
+        intuitiva: desliza el dedo sobre la cuadrícula para seleccionar letras y forma las palabras
+        ocultas antes de que se acaben tus intentos.
       </p>
       <p class="section-desc">
-        El objetivo es simple: cada tablero presenta varios pares de puntos de colores y tienes que trazar
-        un camino continuo que una cada par sin que ningún trazo se cruce con otro y llenando todas las
-        celdas del tablero. Suena sencillo con pocos colores, pero al aumentar el tamaño del tablero
-        y el número de pares la dificultad escala de forma natural, exigiendo planificación y visión global.
+        Cada nivel está definido por una temática específica y una cuadrícula de tamaño variable. Los
+        niveles iniciales son accesibles para cualquier jugador, mientras que los avanzados exigen
+        precisión y vocabulario. El sistema de intentos por nivel y las vidas globales añaden una capa
+        de estrategia sin convertir el juego en algo frustrante.
       </p>
       <p class="section-desc">
-        A diferencia de otros juegos del mismo género, <strong>ConnectAll</strong> no bloquea niveles
-        detrás de muros de pago ni te bombardea con interrupciones. La publicidad existe —es la forma de
-        sostener el desarrollo— pero está implementada con <strong>Google AdMob en modo no personalizado</strong>,
-        lo que garantiza el cumplimiento con la normativa de menores (COPPA y GDPR) y una experiencia
-        respetuosa para el jugador.
+        A diferencia de otras apps del mismo género, <strong>Sopa de Letras</strong> no bloquea
+        progreso detrás de muros de pago. La publicidad, implementada con
+        <strong>Google AdMob</strong>, financia el desarrollo sin interrumpir la experiencia de juego
+        de forma agresiva.
+      </p>
+      <p class="section-desc">
+        El sistema de vidas recuperables —una vida cada 30 minutos hasta un máximo de cinco— crea
+        ciclos de uso naturales que fomentan volver a la app a diario sin imponer sesiones largas
+        forzadas.
       </p>
     </section>
 
@@ -433,11 +492,12 @@
     <section aria-labelledby="caracteristicas-title">
       <h2 id="caracteristicas-title">Características principales</h2>
       <ul class="feature-list" style="margin-top:16px">
-        <li>Conecta todos los puntos del mismo color sin cruzar ningún trazo</li>
-        <li>Niveles progresivos de dificultad, desde principiante hasta experto</li>
-        <li>Tableros de distintos tamaños para aumentar el reto</li>
-        <li>Publicidad no personalizada apta para menores (COPPA / GDPR)</li>
-        <li>Sin compras necesarias para desbloquear niveles</li>
+        <li>Encuentra palabras ocultas deslizando el dedo en todas las direcciones</li>
+        <li>Niveles progresivos con temáticas variadas y cuadrículas de distintos tamaños</li>
+        <li>Sistema de vidas: hasta 5 vidas que se recuperan cada 30 minutos</li>
+        <li>Sistema de intentos por nivel para añadir reto sin eliminar la diversión</li>
+        <li>Funciona completamente sin conexión a internet</li>
+        <li>Sin compras necesarias para desbloquear contenido</li>
       </ul>
     </section>
 
@@ -445,12 +505,12 @@
     <section aria-labelledby="capturas-title">
       <h2 id="capturas-title">Capturas de pantalla</h2>
       <div class="screenshots">
-        <img src="/apps/connectall/captura1.webp"
-             alt="ConnectAll — pantalla de juego" width="360" height="640" loading="lazy" />
-        <img src="/apps/connectall/captura2.webp"
-             alt="ConnectAll — selección de nivel" width="360" height="640" loading="lazy" />
-        <img src="/apps/connectall/captura3.webp"
-             alt="ConnectAll — tablero resuelto" width="360" height="640" loading="lazy" />
+        <img src="/apps/sopadeletras/captura1.jpg"
+             alt="Sopa de Letras — pantalla de juego" width="360" height="640" loading="lazy" />
+        <img src="/apps/sopadeletras/captura2.jpg"
+             alt="Sopa de Letras — cuadrícula de letras" width="360" height="640" loading="lazy" />
+        <img src="/apps/sopadeletras/captura3.jpg"
+             alt="Sopa de Letras — selección de nivel" width="360" height="640" loading="lazy" />
       </div>
     </section>
 
@@ -458,52 +518,69 @@
     <section aria-labelledby="ficha-title">
       <h2 id="ficha-title">Ficha técnica</h2>
       <dl class="detail-grid" style="margin-top:16px">
-        <div class="detail-card"><dt>Plataforma</dt><dd>Android</dd></div>
-        <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2026</dd></div>
-        <div class="detail-card"><dt>Stack principal</dt><dd>Kotlin · AdMob</dd></div>
-        <div class="detail-card"><dt>Audiencia</dt><dd>Todas las edades</dd></div>
-        <div class="detail-card"><dt>Precio</dt><dd>Gratuito</dd></div>
-        <div class="detail-card"><dt>Publicidad</dt><dd>No personalizada</dd></div>
+        <div class="detail-card">
+          <dt>Plataforma</dt>
+          <dd>Android</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Año de lanzamiento</dt>
+          <dd>2026</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Stack</dt>
+          <dd>Kotlin · Jetpack Compose</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Almacenamiento</dt>
+          <dd>SharedPreferences · Room</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Precio</dt>
+          <dd>Gratuita</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Publicidad</dt>
+          <dd>AdMob</dd>
+        </div>
       </dl>
     </section>
 
-    <!-- Cómo lo he desarrollado -->
+    <!-- Cómo la he desarrollado -->
     <section aria-labelledby="desarrollo-title">
-      <h2 id="desarrollo-title">Cómo lo he desarrollado</h2>
+      <h2 id="desarrollo-title">Cómo la he desarrollado</h2>
       <div class="dev-block">
         <p>
-          ConnectAll fue mi segunda app Android publicada. Después de la experiencia con DGTest —un proyecto
-          más complejo con backend en Firebase— quise construir algo más centrado en la lógica de juego pura:
-          sin servidor, sin base de datos remota, solo un motor de puzzle bien optimizado que funcionase
-          de manera fluida en cualquier dispositivo Android.
+          Sopa de Letras es mi tercer proyecto Android publicado en Google Play. Después de DGTest
+          Autoescuela —enfocada en educación vial— y ConnectAll —un puzzle de conexión de puntos—,
+          quería explorar un género diferente: el de los juegos de vocabulario y palabras.
         </p>
         <p>
-          La mecánica central, el algoritmo que valida si todos los trazos son correctos sin cruzarse y
-          si el tablero queda completamente relleno, fue el reto técnico principal. Lo implementé en
-          <strong>Kotlin</strong> con una representación del tablero como matriz bidimensional, y el motor
-          de renderizado usa el <strong>Canvas API</strong> de Android para dibujar los trazos en tiempo real
-          a medida que el jugador arrastra el dedo.
+          El mayor reto técnico fue el sistema de detección de palabras: el algoritmo recorre la
+          cuadrícula en ocho direcciones para marcar las palabras válidas en tiempo real mientras el
+          jugador desliza el dedo. Cada nivel se define mediante un archivo JSON que especifica la
+          temática, el tamaño de la cuadrícula y la lista de palabras a encontrar.
         </p>
         <p>
-          Para la monetización elegí <strong>Google AdMob</strong> configurado en modo no personalizado
-          desde el primer día, garantizando así el cumplimiento con COPPA y GDPR sin necesidad de implementar
-          un flujo de consentimiento complejo. Esto simplificó el desarrollo y hizo que la app fuera
-          publicable para todas las edades sin restricciones.
+          El sistema de vidas e intentos fue diseñado desde cero para equilibrar la dificultad sin
+          frustrar al jugador. Las vidas se recuperan automáticamente cada 30 minutos, lo que incentiva
+          volver a la app de forma natural. Los intentos por nivel —configurables desde el propio JSON—
+          permiten ajustar el reto de cada puzzle de forma precisa.
         </p>
         <p>
-          El diseño de niveles fue otro desafío interesante: generarlos a mano permitió controlar la curva
-          de dificultad con precisión, asegurando que cada tablero tenga exactamente una solución óptima
-          y que la dificultad aumente de forma gradual y satisfactoria para el jugador.
+          Para la persistencia del estado de juego usé una combinación de SharedPreferences
+          —para datos ligeros como las vidas y timestamps— y Room para el progreso de los niveles.
+          La UI está construida íntegramente con Jetpack Compose, lo que facilitó mucho la
+          implementación de las animaciones de selección de letras.
         </p>
       </div>
     </section>
 
-    <!-- CTA central -->
+    <!-- CTA intermedio -->
     <div class="cta-banner">
-      <h2>¿Listo para poner a prueba tu mente?</h2>
-      <p>Descarga ConnectAll gratis en Google Play y empieza a resolver puzzles hoy mismo.</p>
+      <h2>¿Listo para poner a prueba tu vocabulario?</h2>
+      <p>Sopa de Letras es gratuita y está disponible ahora mismo en Google Play.</p>
       <a class="btn-primary"
-         href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+         href="https://play.google.com/store/apps/details?id=com.freedomappload.sopadeletras"
          target="_blank" rel="noreferrer noopener">
         ↓ Descargar gratis en Google Play
       </a>
@@ -516,49 +593,50 @@
 
         <details class="faq-item" role="listitem">
           <summary class="faq-question">
-            ¿La app es gratuita?
+            ¿Cómo se juega a Sopa de Letras?
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            Sí, ConnectAll es completamente gratuita. No hay compras dentro de la app ni suscripciones.
-            Algunos niveles pueden mostrar anuncios no intrusivos para cubrir los costes de mantenimiento.
+            Cada nivel muestra una cuadrícula llena de letras y una lista de palabras que debes encontrar.
+            Desliza el dedo sobre las letras de la cuadrícula para seleccionarlas. Si formas una palabra
+            correcta, queda marcada y se elimina de la lista pendiente. El nivel se completa cuando
+            encuentras todas las palabras.
           </p>
         </details>
 
         <details class="faq-item" role="listitem">
           <summary class="faq-question">
-            ¿Cuántos niveles tiene el juego?
+            ¿Qué es el sistema de vidas?
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            El juego incluye múltiples packs de niveles con tableros de distintos tamaños, desde cuadrículas
-            pequeñas para principiantes hasta tableros grandes diseñados para jugadores avanzados. Se irán
-            añadiendo nuevos niveles con las actualizaciones de la app.
+            Tienes hasta 5 vidas. Si agotas los intentos en un nivel, pierdes una vida. Las vidas se
+            recuperan automáticamente: una vida cada 30 minutos. Cuando llegas a 0 vidas debes esperar
+            a que se regenere al menos una para seguir jugando.
           </p>
         </details>
 
         <details class="faq-item" role="listitem">
           <summary class="faq-question">
-            ¿Cómo se juega exactamente?
+            ¿Qué son los intentos?
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            Cada tablero muestra pares de puntos de colores. Tu objetivo es trazar un camino continuo que
-            una cada par del mismo color, sin que ningún trazo se cruce con otro y rellenando
-            todas las celdas del tablero. El nivel se completa cuando todos los pares están conectados
-            y no queda ninguna celda vacía.
+            Cada nivel tiene un número limitado de intentos. Un intento se consume cada vez que
+            seleccionas una secuencia de letras incorrecta. Si agotas todos los intentos del nivel,
+            pierdes una vida y el nivel se marca como fallido.
           </p>
         </details>
 
         <details class="faq-item" role="listitem">
           <summary class="faq-question">
-            ¿Es apta para niños?
+            ¿Es gratuita?
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            Sí. ConnectAll está diseñada para todas las edades. La publicidad está configurada en modo
-            no personalizado, cumpliendo con la normativa COPPA (para menores de 13 años) y GDPR.
-            No recoge datos personales de los jugadores.
+            Sí, Sopa de Letras es completamente gratuita. No hay compras dentro de la app para
+            desbloquear niveles ni packs de contenido de pago. La app se financia mediante publicidad
+            de Google AdMob.
           </p>
         </details>
 
@@ -568,9 +646,9 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            Sí. Todos los niveles están incluidos en la propia app y no requieren conexión para jugar.
-            Solo necesitarás internet para cargar los anuncios, pero el juego en sí funciona completamente
-            offline.
+            Sí. Todos los niveles están incluidos dentro de la app y no requieren conexión para jugar.
+            Solo necesitarás internet para cargar los anuncios, pero el juego en sí funciona
+            completamente offline.
           </p>
         </details>
 
@@ -580,9 +658,9 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <p class="faq-answer">
-            La app puede mostrar publicidad a través de Google AdMob en modo no personalizado. No se
-            recogen ni almacenan datos personales identificables. Puedes consultar los detalles completos
-            en la <a href="/privacy-policy-connectall.html" class="inline-accent">política de privacidad</a>.
+            La app puede mostrar publicidad a través de Google AdMob. No se recogen ni almacenan datos
+            personales identificables. Puedes consultar los detalles completos en la
+            <a href="/privacy-policy-sopa-de-letras.html" class="inline-accent">política de privacidad</a>.
           </p>
         </details>
 
@@ -593,6 +671,18 @@
     <section class="related-block" aria-labelledby="relacionado-title">
       <h2 id="relacionado-title" class="related-block__title">Relacionado</h2>
       <div class="related-cards">
+        <a class="related-card" href="/apps/connectall/">
+          <img class="related-card__img"
+            src="/apps/connectall/graficofunciones.png"
+            alt="ConnectAll — Juego de puzzle para Android"
+            width="600" height="338" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__label">App · Android</span>
+            <p class="related-card__title">ConnectAll</p>
+            <p class="related-card__desc">Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos.</p>
+            <span class="related-card__cta">Ver ConnectAll →</span>
+          </div>
+        </a>
         <a class="related-card" href="/apps/dgtest/">
           <img class="related-card__img"
             src="/apps/dgtest/graficofunciones.png"
@@ -603,30 +693,6 @@
             <p class="related-card__title">DGTest Autoescuela</p>
             <p class="related-card__desc">Simulacros oficiales de examen de conducir con analítica de progreso y modo offline.</p>
             <span class="related-card__cta">Ver DGTest →</span>
-          </div>
-        </a>
-        <a class="related-card" href="/apps/sopadeletras/">
-          <img class="related-card__img"
-            src="/apps/sopadeletras/graficofunciones.png"
-            alt="Sopa de Letras — Juego de palabras para Android"
-            width="600" height="338" loading="lazy" />
-          <div class="related-card__body">
-            <span class="related-card__label">App · Android</span>
-            <p class="related-card__title">Sopa de Letras</p>
-            <p class="related-card__desc">Juego clásico de sopa de letras con niveles progresivos y sistema de vidas.</p>
-            <span class="related-card__cta">Ver Sopa de Letras →</span>
-          </div>
-        </a>
-        <a class="related-card" href="/blog/maestro-cocinero-web-recetas/">
-          <img class="related-card__img"
-            src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&h=338&q=75"
-            alt="Artículo de blog: Cómo construí Maestro Cocinero"
-            width="600" height="338" loading="lazy" />
-          <div class="related-card__body">
-            <span class="related-card__label">Blog · Desarrollo web</span>
-            <p class="related-card__title">Cómo construí Maestro Cocinero</p>
-            <p class="related-card__desc">Decisiones de diseño y arquitectura: Next.js, PostgreSQL y despliegue con Docker Compose.</p>
-            <span class="related-card__cta">Leer artículo →</span>
           </div>
         </a>
       </div>
@@ -640,9 +706,9 @@
     <!-- CTA final -->
     <div class="cta-banner">
       <h2>¿A qué estás esperando?</h2>
-      <p>ConnectAll es gratuito y está disponible ahora mismo en Google Play.</p>
+      <p>Sopa de Letras es gratuita y está disponible ahora mismo en Google Play.</p>
       <a class="btn-primary"
-         href="https://play.google.com/store/apps/details?id=com.freedomappload.connectall"
+         href="https://play.google.com/store/apps/details?id=com.freedomappload.sopadeletras"
          target="_blank" rel="noreferrer noopener">
         ↓ Descargar gratis en Google Play
       </a>
