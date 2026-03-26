@@ -62,11 +62,30 @@
       font-weight: 700;
       margin-top: 12px;
     }
+    .about-header .subtitle {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 6px;
+    }
     .about-header p {
       color: var(--muted);
       font-size: 1.1rem;
       margin-top: 14px;
       max-width: 600px;
+    }
+    .about-header .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .about-header .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     .about-header .cta {
       display: flex;
@@ -137,6 +156,103 @@
       font-size: 1.2rem;
       line-height: 1;
     }
+    .experience-list {
+      display: grid;
+      gap: 28px;
+    }
+    .experience-item {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px 28px;
+      position: relative;
+    }
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent);
+      border-radius: 4px 0 0 4px;
+    }
+    .experience-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .experience-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .experience-period {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .experience-company {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .experience-duties {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .experience-duties li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .experience-duties li::before {
+      content: '▹';
+      color: var(--accent);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .experience-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .experience-stack span {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(110,243,165,0.1);
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-tag {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: border-color 150ms ease, background 150ms ease;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent);
+      background: rgba(110,243,165,0.08);
+    }
     .process-list {
       list-style: none;
       display: grid;
@@ -169,17 +285,27 @@
       :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
       body { background: radial-gradient(circle at 20% 20%, rgba(22,195,123,0.15), transparent 50%), var(--bg); }
       .stack-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .experience-item { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
+      .experience-item::before { background: #16c37b; }
+      .experience-stack span { background: rgba(22,195,123,0.1); color: #16c37b; }
       .btn-primary { color: #052e1e; }
       .process-list li::before { background: rgba(22,195,123,0.12); }
+      .skill-tag:hover { border-color: #16c37b; background: rgba(22,195,123,0.08); }
     }
   </style>
 </head>
 <body>
   <main class="about-content">
     <div class="about-header">
-      <small>Desarrollador móvil &amp; web</small>
-      <h1>Antonio Palomo</h1>
-      <p>Desarrollo apps y sitios que generan tracción real. Trabajo en sprints cortos, con entregables visibles cada semana y métricas claras desde el día uno.</p>
+      <small>Senior Software Engineer · Madrid</small>
+      <h1>Antonio Palomo Cárdenas</h1>
+      <p class="subtitle">Desarrollador móvil &amp; web · Backend · Cloud</p>
+      <p>Software Engineer con más de 10 años de experiencia en desarrollo backend, arquitectura de microservicios y entornos cloud. Actualmente en Grupo Santander, participando en diseño y evolución de sistemas distribuidos basados en DDD y arquitecturas orientadas a eventos.</p>
+      <div class="contact-info">
+        <span>📍 Madrid</span>
+        <span>✉️ <a href="mailto:antoniopalomocardenas@gmail.com" style="color:inherit;">antoniopalomocardenas@gmail.com</a></span>
+        <span>📞 <a href="tel:+34664818819" style="color:inherit;">664 818 819</a></span>
+      </div>
       <div class="cta">
         <a class="btn-primary" href="/apps/">Ver mis apps →</a>
         <a class="btn-secondary" href="/projects/">Ver proyectos →</a>
@@ -193,8 +319,93 @@
     </div>
 
     <section>
+      <h2>Experiencia profesional</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Senior Backend Engineer / SRE</h3>
+            <span class="experience-period">2020 – Actualidad</span>
+          </div>
+          <p class="experience-company">Grupo Santander</p>
+          <ul class="experience-duties">
+            <li>Diseño y desarrollo de microservicios en Python (Django, FastAPI).</li>
+            <li>Participación en decisiones de arquitectura.</li>
+            <li>Mejora de fiabilidad y rendimiento (SRE).</li>
+            <li>CI/CD y despliegues cloud-native.</li>
+          </ul>
+          <div class="experience-stack">
+            <span>Python</span><span>Kubernetes</span><span>Docker</span>
+            <span>PostgreSQL</span><span>Kafka</span><span>Redis</span><span>Elasticsearch</span>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Senior Consultant</h3>
+            <span class="experience-period">2017 – 2019</span>
+          </div>
+          <p class="experience-company">Cognodata</p>
+          <ul class="experience-duties">
+            <li>Desarrollo de soluciones en banca.</li>
+            <li>Proyectos NLP e I+D.</li>
+            <li>Implantación de prácticas DevOps.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Full Stack Developer</h3>
+            <span class="experience-period">2013 – 2017</span>
+          </div>
+          <p class="experience-company">Stonework</p>
+          <ul class="experience-duties">
+            <li>Desarrollo Big Data y sistemas distribuidos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-cloud">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Microservices</span>
+        <span class="skill-tag">Software Architecture</span>
+        <span class="skill-tag">DDD</span>
+        <span class="skill-tag">Event-Driven</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Kafka</span>
+        <span class="skill-tag">Redis</span>
+        <span class="skill-tag">Elasticsearch</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">CI/CD</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">SRE</span>
+        <span class="skill-tag">Kotlin</span>
+        <span class="skill-tag">Android</span>
+        <span class="skill-tag">Jetpack Compose</span>
+        <span class="skill-tag">Firebase</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">TypeScript</span>
+      </div>
+    </section>
+
+    <section>
       <h2>Stack tecnológico</h2>
       <div class="stack-grid">
+        <div class="stack-card">
+          <h3>Backend &amp; Cloud</h3>
+          <ul>
+            <li>Python · FastAPI · Django</li>
+            <li>Kubernetes · Docker</li>
+            <li>Kafka · Redis</li>
+            <li>Elasticsearch</li>
+          </ul>
+        </div>
         <div class="stack-card">
           <h3>Mobile</h3>
           <ul>
@@ -214,12 +425,12 @@
           </ul>
         </div>
         <div class="stack-card">
-          <h3>Proceso</h3>
+          <h3>Arquitectura</h3>
           <ul>
-            <li>Discovery guiado</li>
-            <li>KPIs claros</li>
-            <li>Sprints semanales</li>
-            <li>Infra optimizada</li>
+            <li>DDD</li>
+            <li>Event-Driven</li>
+            <li>Microservicios</li>
+            <li>SRE · CI/CD</li>
           </ul>
         </div>
       </div>
