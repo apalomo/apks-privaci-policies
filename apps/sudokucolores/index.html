@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudoku de Colores — Puzzle de Lógica para Android · freedomappload</title>
+  <meta name="description"
+    content="Sudoku de Colores es un puzzle de lógica para Android: resuelve tableros de sudoku usando colores en lugar de números. Gratis en Google Play, apto para todas las edades." />
+  <link rel="canonical" href="https://freedomappload.es/apps/sudokucolores/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="freedomappload" />
+  <meta property="og:title" content="Sudoku de Colores — Puzzle de Lógica para Android · freedomappload" />
+  <meta property="og:description"
+    content="Sudoku de Colores es un puzzle de lógica para Android: resuelve tableros de sudoku usando colores en lugar de números. Gratis en Google Play, apto para todas las edades." />
+  <meta property="og:url" content="https://freedomappload.es/apps/sudokucolores/" />
+  <meta property="og:image" content="https://freedomappload.es/apps/sudokucolores/graficofunciones.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sudoku de Colores — Puzzle de Lógica para Android · freedomappload" />
+  <meta name="twitter:description"
+    content="Sudoku de Colores es un puzzle de lógica para Android: resuelve tableros de sudoku usando colores en lugar de números. Gratis en Google Play, apto para todas las edades." />
+  <meta name="twitter:image" content="https://freedomappload.es/apps/sudokucolores/graficofunciones.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sudoku de Colores",
+    "description": "Puzzle de lógica para Android que sustituye los números del sudoku clásico por colores. Niveles progresivos, apto para todas las edades.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "url": "https://freedomappload.es/apps/sudokucolores/",
+    "downloadUrl": "https://play.google.com/store/apps/developer?id=freedomappload",
+    "author": { "@type": "Person", "name": "Antonio Palomo", "url": "https://freedomappload.es/about/" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #070707;
+      --text: #f1f1f1;
+      --muted: #8f9ba8;
+      --accent: #6ef3a5;
+      --card: #10121a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    .app-hero {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .app-hero img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .app-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 7, 7, 0.85) 0%, transparent 60%);
+    }
+
+    .app-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 48px) 72px;
+      width: 100%;
+      display: grid;
+      gap: 40px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--text);
+    }
+
+    .breadcrumb span {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .app-meta small {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .app-meta h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .app-meta p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 10px;
+      max-width: 640px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tags span {
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #031b10;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--text);
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 150ms ease;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+
+    .feature-list li::before {
+      content: '▹';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .detail-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .detail-card dt {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .detail-card dd {
+      font-weight: 600;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .screenshots img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    .section-desc+.section-desc {
+      margin-top: 12px;
+    }
+
+    .inline-accent {
+      color: var(--accent);
+    }
+
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .solve-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 22px 20px;
+    }
+
+    .solve-card .solve-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .solve-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .solve-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .dev-block {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .dev-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+
+    .dev-block p+p {
+      margin-top: 10px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0;
+      margin-top: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-question:hover {
+      color: var(--accent);
+    }
+
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 200ms ease;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+
+    .related-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(110, 243, 165, 0.12) 0%, rgba(110, 243, 165, 0.04) 100%);
+      border: 1px solid rgba(110, 243, 165, 0.2);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      margin-bottom: 8px;
+    }
+
+    .cta-banner p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .related-block__title {
+      margin-bottom: 20px;
+    }
+
+    .related-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .related-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .related-card__body {
+      padding: 16px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .related-card__label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .related-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .related-card__desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .related-card__cta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fbfbfb;
+        --text: #0f172a;
+        --muted: #556070;
+        --accent: #16c37b;
+        --card: #ffffff;
+      }
+
+      .app-hero__overlay {
+        background: linear-gradient(to top, rgba(251, 251, 251, 0.85) 0%, transparent 60%);
+      }
+
+      .detail-card {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .solve-card {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .dev-block {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .related-card {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .btn-primary {
+        color: #052e1e;
+      }
+
+      .breadcrumb span {
+        color: rgba(15, 23, 42, 0.25);
+      }
+
+      .faq-list {
+        border-color: rgba(15, 23, 42, 0.1);
+      }
+
+      .faq-item {
+        border-color: rgba(15, 23, 42, 0.1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-hero">
+    <img src="/apps/sudokucolores/graficofunciones.png" alt="Sudoku de Colores — gráfico de funciones de la aplicación"
+      width="1400" height="420" />
+    <div class="app-hero__overlay"></div>
+  </div>
+
+  <main class="app-content">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="/">Inicio</a>
+      <span aria-hidden="true">›</span>
+      <a href="/apps/">Apps</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Sudoku de Colores</span>
+    </nav>
+
+    <div class="app-meta">
+      <small>Juego · 2026 · Android</small>
+      <h1>Sudoku de Colores — Puzzle de Lógica para Android</h1>
+      <p class="app-intro">Una vuelta de tuerca al sudoku clásico: en lugar de números, rellena el tablero con colores.
+        Intuitivo, accesible para todas las edades y completamente gratuito en Google Play.</p>
+      <div class="tags">
+        <span>Android</span><span>Kotlin</span><span>Jetpack Compose</span><span>AdMob</span>
+      </div>
+      <div class="cta-group">
+        <a class="btn-primary"
+          href="https://play.google.com/store/apps/developer?id=freedomappload"
+          target="_blank" rel="noreferrer noopener">
+          ↓ Descargar gratis en Google Play
+        </a>
+        <a class="btn-secondary" href="/privacy-policy-sudoku-de-colores.html">
+          Política de privacidad
+        </a>
+      </div>
+    </div>
+
+    <!-- Qué resuelve -->
+    <section aria-labelledby="que-resuelve-title">
+      <h2 id="que-resuelve-title">¿Qué hace especial a Sudoku de Colores?</h2>
+      <p class="section-desc">
+        El sudoku es uno de los puzzles de lógica más populares del mundo, pero su formato numérico
+        puede resultar intimidante para muchos jugadores. Sudoku de Colores elimina esa barrera
+        sustituyendo los dígitos por colores, haciendo que la lógica sea el único reto.
+      </p>
+      <div class="solve-grid">
+        <div class="solve-card">
+          <div class="solve-icon">🎨</div>
+          <h3>Colores en lugar de números</h3>
+          <p>La mecánica del sudoku clásico, pero con una paleta de colores que hace el juego más visual e
+            intuitivo para cualquier jugador.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">🧩</div>
+          <h3>Lógica pura</h3>
+          <p>Cada tablero tiene una única solución posible. Sin azar, sin suerte: solo razonamiento y
+            deducción paso a paso.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">👶</div>
+          <h3>Apto para todas las edades</h3>
+          <p>El formato visual con colores hace que niños, adultos y mayores puedan disfrutar del puzzle
+            sin ninguna barrera de entrada.</p>
+        </div>
+        <div class="solve-card">
+          <div class="solve-icon">🆓</div>
+          <h3>Completamente gratuito</h3>
+          <p>Sin compras necesarias para desbloquear niveles. Todo el contenido disponible desde el primer
+            día.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descripción larga SEO -->
+    <section aria-labelledby="descripcion-title">
+      <h2 id="descripcion-title">El sudoku reinventado con colores</h2>
+      <p class="section-desc">
+        El objetivo de Sudoku de Colores es el mismo de siempre: rellenar una cuadrícula de forma que
+        cada fila, columna y región contenga exactamente uno de cada elemento. La diferencia es que
+        aquí los elementos son colores, no números.
+      </p>
+      <p class="section-desc">
+        Esta pequeña diferencia tiene un gran impacto en la experiencia: el juego se vuelve más visual,
+        más intuitivo y más accesible. No hace falta saber leer números para jugar. Es un puzzle de lógica
+        pura en el que la única habilidad necesaria es el razonamiento deductivo.
+      </p>
+      <p class="section-desc">
+        A diferencia de otras apps de sudoku, <strong>Sudoku de Colores</strong> no bloquea contenido
+        detrás de muros de pago. La publicidad, implementada con <strong>Google AdMob</strong>,
+        financia el desarrollo sin interrumpir la experiencia de juego de forma agresiva.
+      </p>
+      <p class="section-desc">
+        Los niveles cubren desde tableros pequeños aptos para principiantes hasta cuadrículas más
+        complejas que pondrán a prueba incluso a los jugadores más experimentados.
+      </p>
+    </section>
+
+    <!-- Características principales -->
+    <section aria-labelledby="caracteristicas-title">
+      <h2 id="caracteristicas-title">Características principales</h2>
+      <ul class="feature-list" style="margin-top:16px">
+        <li>Mecánica de sudoku clásico con colores en lugar de números</li>
+        <li>Niveles progresivos: desde tableros sencillos hasta puzzles avanzados</li>
+        <li>Apto para todas las edades, incluidos menores de 13 años</li>
+        <li>Funciona completamente sin conexión a internet</li>
+        <li>Sin compras necesarias para desbloquear contenido</li>
+        <li>Interfaz limpia y minimalista construida con Jetpack Compose</li>
+      </ul>
+    </section>
+
+    <!-- Capturas de pantalla -->
+    <section aria-labelledby="capturas-title">
+      <h2 id="capturas-title">Capturas de pantalla</h2>
+      <div class="screenshots">
+        <img src="/apps/sudokucolores/captura1.jpg" alt="Sudoku de Colores — pantalla de juego" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/sudokucolores/captura2.jpg" alt="Sudoku de Colores — tablero en progreso" width="360"
+          height="640" loading="lazy" />
+        <img src="/apps/sudokucolores/captura3.jpg" alt="Sudoku de Colores — selección de nivel" width="360"
+          height="640" loading="lazy" />
+        <img src="/apps/sudokucolores/captura4.jpg" alt="Sudoku de Colores — nivel completado" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/sudokucolores/captura5.jpg" alt="Sudoku de Colores — puzzle avanzado" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/sudokucolores/captura6.jpg" alt="Sudoku de Colores — menú principal" width="360" height="640"
+          loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Ficha técnica -->
+    <section aria-labelledby="ficha-title">
+      <h2 id="ficha-title">Ficha técnica</h2>
+      <dl class="detail-grid" style="margin-top:16px">
+        <div class="detail-card">
+          <dt>Plataforma</dt>
+          <dd>Android</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Año de lanzamiento</dt>
+          <dd>2026</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Stack</dt>
+          <dd>Kotlin · Jetpack Compose</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Almacenamiento</dt>
+          <dd>SharedPreferences · Room</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Precio</dt>
+          <dd>Gratuita</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Publicidad</dt>
+          <dd>AdMob</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Cómo la he desarrollado -->
+    <section aria-labelledby="desarrollo-title">
+      <h2 id="desarrollo-title">Cómo la he desarrollado</h2>
+      <div class="dev-block">
+        <p>
+          Sudoku de Colores es mi cuarto proyecto Android publicado en Google Play. Después de
+          DGTest Autoescuela, ConnectAll y Sopa de Letras, quería explorar un género diferente:
+          el puzzle de lógica pura con un giro visual que lo hiciera accesible a cualquier jugador.
+        </p>
+        <p>
+          El reto principal fue el generador y validador de tableros: el algoritmo crea puzzles
+          que tienen exactamente una solución posible, ajustando la dificultad según el nivel.
+          Cada tablero se genera dinámicamente para garantizar que no haya dos puzzles iguales.
+        </p>
+        <p>
+          La sustitución de números por colores implicó repensar la interfaz táctil por completo.
+          El selector de color tenía que ser intuitivo, accesible y cómodo de usar en pantallas
+          de cualquier tamaño. La UI está construida íntegramente con Jetpack Compose, lo que
+          facilitó mucho la gestión de los estados de celda y la animación de selección.
+        </p>
+        <p>
+          Para la persistencia del progreso usé una combinación de SharedPreferences —para
+          datos ligeros como preferencias— y Room para el estado de los tableros guardados,
+          de forma que el jugador pueda abandonar un puzzle y retomarlo exactamente donde lo dejó.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA intermedio -->
+    <div class="cta-banner">
+      <h2>¿Listo para poner a prueba tu lógica?</h2>
+      <p>Sudoku de Colores es gratuito y está disponible ahora mismo en Google Play.</p>
+      <a class="btn-primary"
+        href="https://play.google.com/store/apps/developer?id=freedomappload"
+        target="_blank" rel="noreferrer noopener">
+        ↓ Descargar gratis en Google Play
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq-list" role="list">
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Cómo se juega a Sudoku de Colores?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            El objetivo es rellenar todas las celdas vacías del tablero de forma que cada fila, columna
+            y región contenga exactamente un color de cada tipo. Toca una celda vacía, elige el color
+            correcto y avanza hasta completar el tablero.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Es apta para niños?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. Sudoku de Colores está diseñada para ser apta para todas las edades, incluidos menores
+            de 13 años. El formato visual con colores elimina la barrera numérica y hace el juego
+            accesible para niños. Cuando corresponda, la publicidad mostrada a menores será no
+            personalizada.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Hay una sola solución por tablero?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. Cada tablero generado tiene exactamente una solución posible. No hay azar ni ambigüedad:
+            si llegas a un callejón sin salida, significa que en algún paso anterior hay un error que
+            debes corregir.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Es gratuita?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí, Sudoku de Colores es completamente gratuita. No hay compras dentro de la app para
+            desbloquear niveles ni packs de contenido de pago. La app se financia mediante publicidad
+            de Google AdMob.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Funciona sin conexión a internet?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            Sí. Todos los niveles están incluidos dentro de la app y no requieren conexión para jugar.
+            Solo necesitarás internet para cargar los anuncios, pero el juego en sí funciona
+            completamente offline.
+          </p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-question">
+            ¿Qué datos recoge la app?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p class="faq-answer">
+            La app puede mostrar publicidad a través de Google AdMob. No se recogen ni almacenan datos
+            personales identificables. Puedes consultar los detalles completos en la
+            <a href="/privacy-policy-sudoku-de-colores.html" class="inline-accent">política de privacidad</a>.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Relacionado -->
+    <section class="related-block" aria-labelledby="relacionado-title">
+      <h2 id="relacionado-title" class="related-block__title">Relacionado</h2>
+      <div class="related-cards">
+        <a class="related-card" href="/apps/sopadeletras/">
+          <img class="related-card__img" src="/apps/sopadeletras/graficofunciones.png"
+            alt="Sopa de Letras — Juego de palabras para Android" width="600" height="338" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__label">App · Android</span>
+            <p class="related-card__title">Sopa de Letras</p>
+            <p class="related-card__desc">Encuentra todas las palabras ocultas en la cuadrícula con niveles
+              progresivos.</p>
+            <span class="related-card__cta">Ver Sopa de Letras →</span>
+          </div>
+        </a>
+        <a class="related-card" href="/apps/connectall/">
+          <img class="related-card__img" src="/apps/connectall/graficofunciones.png"
+            alt="ConnectAll — Juego de puzzle para Android" width="600" height="338" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__label">App · Android</span>
+            <p class="related-card__title">ConnectAll</p>
+            <p class="related-card__desc">Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar
+              los trazos.</p>
+            <span class="related-card__cta">Ver ConnectAll →</span>
+          </div>
+        </a>
+      </div>
+      <div class="related-links">
+        <a class="related-link" href="/apps/">← Ver todas las apps Android</a>
+        <a class="related-link" href="/projects/">Proyectos web →</a>
+        <a class="related-link" href="/blog/">Blog →</a>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <div class="cta-banner">
+      <h2>¿A qué estás esperando?</h2>
+      <p>Sudoku de Colores es gratuito y está disponible ahora mismo en Google Play.</p>
+      <a class="btn-primary"
+        href="https://play.google.com/store/apps/developer?id=freedomappload"
+        target="_blank" rel="noreferrer noopener">
+        ↓ Descargar gratis en Google Play
+      </a>
+    </div>
+
+  </main>
+
+  <footer></footer>
+  <script src="/site.js"></script>
+</body>
+
+</html>
