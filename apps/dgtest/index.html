@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DGTest Autoescuela — App para el Examen de Conducir · freedomappload</title>
-  <meta name="description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
+  <meta name="description"
+    content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <link rel="canonical" href="https://freedomappload.es/apps/dgtest/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="freedomappload" />
   <meta property="og:title" content="DGTest Autoescuela — App para el Examen de Conducir · freedomappload" />
-  <meta property="og:description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
+  <meta property="og:description"
+    content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <meta property="og:url" content="https://freedomappload.es/apps/dgtest/" />
   <meta property="og:image" content="https://freedomappload.es/apps/dgtest/graficofunciones.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DGTest Autoescuela — App para el Examen de Conducir · freedomappload" />
-  <meta name="twitter:description" content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
+  <meta name="twitter:description"
+    content="DGTest es la app Android para superar el examen de conducir: simulacros oficiales DGT, analítica de progreso detallada y modo offline. Descárgala gratis en Google Play." />
   <meta name="twitter:image" content="https://freedomappload.es/apps/dgtest/graficofunciones.png" />
   <script type="application/ld+json">
   {
@@ -46,7 +50,13 @@
       --accent: #6ef3a5;
       --card: #10121a;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Space Grotesk', system-ui, sans-serif;
       background: var(--bg);
@@ -56,23 +66,27 @@
       flex-direction: column;
       line-height: 1.6;
     }
+
     .app-hero {
       width: 100%;
       max-height: 420px;
       overflow: hidden;
       position: relative;
     }
+
     .app-hero img {
       width: 100%;
       height: 420px;
       object-fit: cover;
       display: block;
     }
+
     .app-hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(7,7,7,0.85) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(7, 7, 7, 0.85) 0%, transparent 60%);
     }
+
     .app-content {
       max-width: 860px;
       margin: 0 auto;
@@ -81,6 +95,7 @@
       display: grid;
       gap: 40px;
     }
+
     .breadcrumb {
       display: flex;
       align-items: center;
@@ -88,9 +103,20 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
-    .breadcrumb a { color: var(--muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--text); }
-    .breadcrumb span { color: rgba(255,255,255,0.3); }
+
+    .breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--text);
+    }
+
+    .breadcrumb span {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
     .app-meta small {
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -98,35 +124,41 @@
       font-size: 0.8rem;
       font-weight: 600;
     }
+
     .app-meta h1 {
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
       margin-top: 10px;
     }
+
     .app-meta .app-intro {
       color: var(--muted);
       font-size: 1.05rem;
       margin-top: 10px;
       max-width: 640px;
     }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 16px;
     }
+
     .tags span {
       font-size: 0.85rem;
       padding: 5px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
     }
+
     .cta-group {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 24px;
     }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -140,57 +172,82 @@
       text-decoration: none;
       transition: transform 150ms ease, box-shadow 150ms ease;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(110,243,165,0.25); }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(110, 243, 165, 0.25);
+    }
+
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 14px 28px;
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       color: var(--text);
       border-radius: 12px;
       font-weight: 600;
       text-decoration: none;
       transition: transform 150ms ease;
     }
-    .btn-secondary:hover { transform: translateY(-2px); }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
     .feature-list {
       list-style: none;
       display: grid;
       gap: 10px;
     }
+
     .feature-list li {
       display: flex;
       gap: 10px;
       align-items: flex-start;
       color: var(--muted);
     }
+
     .feature-list li::before {
       content: '▹';
       color: var(--accent);
       flex-shrink: 0;
       margin-top: 2px;
     }
-    h2 { font-size: 1.4rem; font-weight: 700; }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
     .section-desc {
       color: var(--muted);
       font-size: 1rem;
       margin-top: 10px;
       line-height: 1.7;
     }
-    .section-desc + .section-desc { margin-top: 12px; }
-    .inline-accent { color: var(--accent); }
+
+    .section-desc+.section-desc {
+      margin-top: 12px;
+    }
+
+    .inline-accent {
+      color: var(--accent);
+    }
+
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
     }
+
     .detail-card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 14px;
       padding: 20px;
     }
+
     .detail-card dt {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -198,74 +255,93 @@
       color: var(--muted);
       margin-bottom: 6px;
     }
+
     .detail-card dd {
       font-weight: 600;
     }
+
     .screenshots {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 12px;
       margin-top: 16px;
     }
+
     .screenshots img {
       width: 100%;
       aspect-ratio: 9/16;
       object-fit: cover;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
     }
+
     .solve-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       margin-top: 20px;
     }
+
     .solve-card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 14px;
       padding: 22px 20px;
     }
+
     .solve-card .solve-icon {
       font-size: 1.6rem;
       line-height: 1;
       margin-bottom: 10px;
     }
+
     .solve-card h3 {
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
+
     .solve-card p {
       font-size: 0.92rem;
       color: var(--muted);
       line-height: 1.6;
     }
+
     .dev-block {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 16px;
       padding: 28px;
     }
+
     .dev-block p {
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.75;
       margin-top: 12px;
     }
-    .dev-block p + p { margin-top: 10px; }
+
+    .dev-block p+p {
+      margin-top: 10px;
+    }
+
     .faq-list {
       display: grid;
       gap: 0;
       margin-top: 16px;
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 14px;
       overflow: hidden;
     }
+
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
-    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
     .faq-question {
       width: 100%;
       background: none;
@@ -282,33 +358,43 @@
       align-items: center;
       gap: 12px;
     }
-    .faq-question:hover { color: var(--accent); }
+
+    .faq-question:hover {
+      color: var(--accent);
+    }
+
     .faq-question .faq-icon {
       flex-shrink: 0;
       font-size: 1.2rem;
       color: var(--accent);
       transition: transform 200ms ease;
     }
-    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+    }
+
     .faq-answer {
       padding: 0 20px 18px;
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.7;
     }
+
     .related-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 16px;
     }
+
     .related-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 10px 18px;
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 10px;
       color: var(--text);
       font-size: 0.9rem;
@@ -316,34 +402,77 @@
       text-decoration: none;
       transition: border-color 150ms ease, color 150ms ease;
     }
-    .related-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    .related-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     .cta-banner {
-      background: linear-gradient(135deg, rgba(110,243,165,0.12) 0%, rgba(110,243,165,0.04) 100%);
-      border: 1px solid rgba(110,243,165,0.2);
+      background: linear-gradient(135deg, rgba(110, 243, 165, 0.12) 0%, rgba(110, 243, 165, 0.04) 100%);
+      border: 1px solid rgba(110, 243, 165, 0.2);
       border-radius: 16px;
       padding: 32px 28px;
       text-align: center;
     }
-    .cta-banner h2 { margin-bottom: 8px; }
-    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
+
+    .cta-banner h2 {
+      margin-bottom: 8px;
+    }
+
+    .cta-banner p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
     @media (prefers-color-scheme: light) {
-      :root { --bg: #fbfbfb; --text: #0f172a; --muted: #556070; --accent: #16c37b; --card: #ffffff; }
-      .app-hero__overlay { background: linear-gradient(to top, rgba(251,251,251,0.85) 0%, transparent 60%); }
-      .detail-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
-      .solve-card { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
-      .dev-block { box-shadow: 0 4px 16px rgba(15,23,42,0.07); }
-      .btn-primary { color: #052e1e; }
-      .breadcrumb span { color: rgba(15,23,42,0.25); }
-      .faq-list { border-color: rgba(15,23,42,0.1); }
-      .faq-item { border-color: rgba(15,23,42,0.1); }
+      :root {
+        --bg: #fbfbfb;
+        --text: #0f172a;
+        --muted: #556070;
+        --accent: #16c37b;
+        --card: #ffffff;
+      }
+
+      .app-hero__overlay {
+        background: linear-gradient(to top, rgba(251, 251, 251, 0.85) 0%, transparent 60%);
+      }
+
+      .detail-card {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .solve-card {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .dev-block {
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      }
+
+      .btn-primary {
+        color: #052e1e;
+      }
+
+      .breadcrumb span {
+        color: rgba(15, 23, 42, 0.25);
+      }
+
+      .faq-list {
+        border-color: rgba(15, 23, 42, 0.1);
+      }
+
+      .faq-item {
+        border-color: rgba(15, 23, 42, 0.1);
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="app-hero">
-    <img
-      src="/apps/dgtest/graficofunciones.png"
-      alt="DGTest Autoescuela — gráfico de funciones de la aplicación"
+    <img src="/apps/dgtest/graficofunciones.png" alt="DGTest Autoescuela — gráfico de funciones de la aplicación"
       width="1400" height="420" />
     <div class="app-hero__overlay"></div>
   </div>
@@ -369,9 +498,8 @@
         <span>Kotlin</span><span>Jetpack Compose</span><span>Firebase</span><span>Room</span>
       </div>
       <div class="cta-group">
-        <a class="btn-primary"
-           href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
-           target="_blank" rel="noreferrer noopener">
+        <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
+          target="_blank" rel="noreferrer noopener">
           ↓ Descargar gratis en Google Play
         </a>
         <a class="btn-secondary" href="/privacy-policy-dgtest.html">
@@ -397,12 +525,14 @@
         <div class="solve-card">
           <div class="solve-icon">📊</div>
           <h3>Saber dónde fallas</h3>
-          <p>El panel de analítica muestra tu porcentaje de acierto por categoría, para que estudies lo que de verdad importa.</p>
+          <p>El panel de analítica muestra tu porcentaje de acierto por categoría, para que estudies lo que de verdad
+            importa.</p>
         </div>
         <div class="solve-card">
           <div class="solve-icon">📶</div>
           <h3>Estudiar sin internet</h3>
-          <p>Toda la batería de tests funciona en modo offline. Estudia en el metro, en el autobús o en cualquier lugar sin cobertura.</p>
+          <p>Toda la batería de tests funciona en modo offline. Estudia en el metro, en el autobús o en cualquier lugar
+            sin cobertura.</p>
         </div>
         <div class="solve-card">
           <div class="solve-icon">💡</div>
@@ -459,20 +589,14 @@
     <section aria-labelledby="capturas-title">
       <h2 id="capturas-title">Capturas de pantalla</h2>
       <div class="screenshots">
-        <img src="/apps/dgtest/captura1.webp"
-             alt="DGTest — captura de pantalla 1" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura2.webp"
-             alt="DGTest — captura de pantalla 2" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura3.webp"
-             alt="DGTest — captura de pantalla 3" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura4.webp"
-             alt="DGTest — captura de pantalla 4" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura5.webp"
-             alt="DGTest — captura de pantalla 5" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura6.webp"
-             alt="DGTest — captura de pantalla 6" width="360" height="640" loading="lazy" />
-        <img src="/apps/dgtest/captura7.webp"
-             alt="DGTest — captura de pantalla 7" width="360" height="640" loading="lazy" />
+        <img src="/apps/dgtest/captura1.webp" alt="DGTest — captura de pantalla 1" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/dgtest/captura2.webp" alt="DGTest — captura de pantalla 2" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/dgtest/captura3.webp" alt="DGTest — captura de pantalla 3" width="360" height="640"
+          loading="lazy" />
+        <img src="/apps/dgtest/captura4.webp" alt="DGTest — captura de pantalla 4" width="360" height="640"
+          loading="lazy" />
       </div>
     </section>
 
@@ -480,12 +604,30 @@
     <section aria-labelledby="ficha-title">
       <h2 id="ficha-title">Ficha técnica</h2>
       <dl class="detail-grid" style="margin-top:16px">
-        <div class="detail-card"><dt>Plataforma</dt><dd>Android</dd></div>
-        <div class="detail-card"><dt>Año de lanzamiento</dt><dd>2024</dd></div>
-        <div class="detail-card"><dt>Stack principal</dt><dd>Kotlin · Firebase</dd></div>
-        <div class="detail-card"><dt>Almacenamiento local</dt><dd>Room (SQLite)</dd></div>
-        <div class="detail-card"><dt>Interfaz</dt><dd>Jetpack Compose</dd></div>
-        <div class="detail-card"><dt>Precio</dt><dd>Gratuita</dd></div>
+        <div class="detail-card">
+          <dt>Plataforma</dt>
+          <dd>Android</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Año de lanzamiento</dt>
+          <dd>2024</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Stack principal</dt>
+          <dd>Kotlin · Firebase</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Almacenamiento local</dt>
+          <dd>Room (SQLite)</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Interfaz</dt>
+          <dd>Jetpack Compose</dd>
+        </div>
+        <div class="detail-card">
+          <dt>Precio</dt>
+          <dd>Gratuita</dd>
+        </div>
       </dl>
     </section>
 
@@ -525,9 +667,8 @@
     <div class="cta-banner">
       <h2>¿Listo para aprobar el examen de conducir?</h2>
       <p>Descarga DGTest gratis en Google Play y empieza a practicar hoy mismo.</p>
-      <a class="btn-primary"
-         href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
-         target="_blank" rel="noreferrer noopener">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
+        target="_blank" rel="noreferrer noopener">
         ↓ Descargar gratis en Google Play
       </a>
     </div>
@@ -615,38 +756,36 @@
       <h2 id="relacionado-title" class="related-block__title">Relacionado</h2>
       <div class="related-cards">
         <a class="related-card" href="/apps/connectall/">
-          <img class="related-card__img"
-            src="/apps/connectall/graficofunciones.png"
-            alt="ConnectAll — Juego de puzzle para Android"
-            width="600" height="338" loading="lazy" />
+          <img class="related-card__img" src="/apps/connectall/graficofunciones.png"
+            alt="ConnectAll — Juego de puzzle para Android" width="600" height="338" loading="lazy" />
           <div class="related-card__body">
             <span class="related-card__label">App · Android</span>
             <p class="related-card__title">ConnectAll</p>
-            <p class="related-card__desc">Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar los trazos.</p>
+            <p class="related-card__desc">Juego de puzzle para móvil: conecta todos los puntos del tablero sin cruzar
+              los trazos.</p>
             <span class="related-card__cta">Ver ConnectAll →</span>
           </div>
         </a>
         <a class="related-card" href="/apps/sopadeletras/">
-          <img class="related-card__img"
-            src="/apps/sopadeletras/graficofunciones.png"
-            alt="Sopa de Letras — Juego de palabras para Android"
-            width="600" height="338" loading="lazy" />
+          <img class="related-card__img" src="/apps/sopadeletras/graficofunciones.png"
+            alt="Sopa de Letras — Juego de palabras para Android" width="600" height="338" loading="lazy" />
           <div class="related-card__body">
             <span class="related-card__label">App · Android</span>
             <p class="related-card__title">Sopa de Letras</p>
-            <p class="related-card__desc">Juego clásico de sopa de letras con niveles progresivos y sistema de vidas.</p>
+            <p class="related-card__desc">Juego clásico de sopa de letras con niveles progresivos y sistema de vidas.
+            </p>
             <span class="related-card__cta">Ver Sopa de Letras →</span>
           </div>
         </a>
         <a class="related-card" href="/blog/maestro-cocinero-web-recetas/">
           <img class="related-card__img"
             src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&h=338&q=75"
-            alt="Artículo de blog: Cómo construí Maestro Cocinero"
-            width="600" height="338" loading="lazy" />
+            alt="Artículo de blog: Cómo construí Maestro Cocinero" width="600" height="338" loading="lazy" />
           <div class="related-card__body">
             <span class="related-card__label">Blog · Desarrollo web</span>
             <p class="related-card__title">Cómo construí Maestro Cocinero</p>
-            <p class="related-card__desc">Decisiones de diseño y arquitectura: Next.js, PostgreSQL y despliegue con Docker Compose.</p>
+            <p class="related-card__desc">Decisiones de diseño y arquitectura: Next.js, PostgreSQL y despliegue con
+              Docker Compose.</p>
             <span class="related-card__cta">Leer artículo →</span>
           </div>
         </a>
@@ -662,9 +801,8 @@
     <div class="cta-banner">
       <h2>¿Listo para empezar a estudiar?</h2>
       <p>DGTest es gratuita y está disponible ahora mismo en Google Play.</p>
-      <a class="btn-primary"
-         href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
-         target="_blank" rel="noreferrer noopener">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.freedomappload.dgtest"
+        target="_blank" rel="noreferrer noopener">
         ↓ Descargar gratis en Google Play
       </a>
     </div>
@@ -674,4 +812,5 @@
   <footer></footer>
   <script src="/site.js"></script>
 </body>
+
 </html>
